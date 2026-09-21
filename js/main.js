@@ -56,12 +56,12 @@ async function initializeComponents() {
     await Promise.all([
         loadComponent(
             "header-root",
-            "../components/header.html"
+            "./partials/header.html"
         ),
 
         loadComponent(
             "footer-root",
-            "../components/footer.html"
+            "./partials/footer.html"
         )
     ]);
 
