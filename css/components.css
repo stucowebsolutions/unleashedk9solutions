@@ -1,1 +1,413 @@
+/* =========================================================
+   UNLEASHED K9 SOLUTIONS
+   GLOBAL COMPONENTS
+   ========================================================= */
 
+
+/* ---------------------------------------------------------
+   1. Site Header
+   --------------------------------------------------------- */
+
+.site-header {
+    position: relative;
+    z-index: 1000;
+
+    width: 100%;
+
+    background: rgba(11, 11, 11, 0.96);
+    border-bottom: 1px solid var(--color-border);
+
+    transition:
+        background-color var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.site-header.is-scrolled {
+    position: sticky;
+    top: 0;
+
+    background: rgba(11, 11, 11, 0.98);
+    box-shadow: var(--shadow-sm);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: var(--header-height);
+}
+
+
+/* ---------------------------------------------------------
+   2. Logo
+   --------------------------------------------------------- */
+
+.site-logo {
+    display: inline-flex;
+    flex-direction: column;
+
+    flex-shrink: 0;
+
+    line-height: 1;
+}
+
+.site-logo__primary {
+    color: var(--color-white);
+
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.site-logo__secondary {
+    margin-top: 3px;
+
+    color: var(--color-red-light);
+
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------
+   3. Navigation
+   --------------------------------------------------------- */
+
+.site-navigation {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+}
+
+.nav-link {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 48px;
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+
+    transition: color var(--transition-base);
+}
+
+.nav-link::after {
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    left: 0;
+
+    height: 2px;
+
+    background: var(--color-red);
+
+    content: "";
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform var(--transition-base);
+}
+
+.nav-link:hover,
+.nav-link.is-active {
+    color: var(--color-white);
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+    transform: scaleX(1);
+}
+
+.header-cta {
+    white-space: nowrap;
+}
+
+
+/* ---------------------------------------------------------
+   4. Mobile Menu Button
+   --------------------------------------------------------- */
+
+.mobile-menu-toggle {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+
+    width: 24px;
+    height: 2px;
+
+    margin: 5px auto;
+
+    background: var(--color-white);
+
+    transition:
+        transform var(--transition-base),
+        opacity var(--transition-base);
+}
+
+.mobile-menu-toggle.is-active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.is-active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ---------------------------------------------------------
+   5. Footer
+   --------------------------------------------------------- */
+
+.site-footer {
+    padding-top: var(--space-20);
+
+    background: var(--color-black);
+
+    border-top: 1px solid var(--color-border);
+}
+
+.footer-main {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr
+        1.2fr;
+
+    gap: var(--space-12);
+
+    padding-bottom: var(--space-16);
+}
+
+.footer-brand {
+    max-width: 320px;
+}
+
+.site-logo--footer {
+    margin-bottom: var(--space-5);
+}
+
+.footer-tagline {
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-sm);
+    line-height: 1.7;
+}
+
+.footer-heading {
+    margin-bottom: var(--space-5);
+
+    color: var(--color-white);
+
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.footer-links a {
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-sm);
+
+    transition: color var(--transition-base);
+}
+
+.footer-links a:hover {
+    color: var(--color-white);
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+
+    margin-bottom: var(--space-6);
+
+    font-style: normal;
+}
+
+.footer-contact a {
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-sm);
+
+    transition: color var(--transition-base);
+}
+
+.footer-contact a:hover {
+    color: var(--color-white);
+}
+
+.footer-button {
+    min-height: 42px;
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--space-6);
+
+    padding-block: var(--space-6);
+
+    border-top: 1px solid var(--color-border);
+}
+
+.footer-copyright,
+.footer-legal {
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-xs);
+}
+
+.footer-legal {
+    display: flex;
+    gap: var(--space-5);
+}
+
+.footer-legal a {
+    transition: color var(--transition-base);
+}
+
+.footer-legal a:hover {
+    color: var(--color-white);
+}
+
+
+/* ---------------------------------------------------------
+   6. Responsive Header
+   --------------------------------------------------------- */
+
+@media (max-width: 960px) {
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .site-navigation {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: var(--space-5);
+
+        padding: var(--space-6);
+
+        background: var(--color-black);
+        border-bottom: 1px solid var(--color-border);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity var(--transition-base),
+            visibility var(--transition-base),
+            transform var(--transition-base);
+    }
+
+    .site-navigation.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+
+        transform: translateY(0);
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .nav-link {
+        width: 100%;
+        min-height: 52px;
+
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .header-cta {
+        width: 100%;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-legal {
+        flex-wrap: wrap;
+    }
+
+}
