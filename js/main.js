@@ -3,9 +3,10 @@
    GLOBAL JAVASCRIPT
    ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
-    initializeComponents();
+    await initializeComponents();
+
     initializeNavigation();
     initializeCurrentYear();
     initializeHeaderScroll();
@@ -64,14 +65,6 @@ async function initializeComponents() {
         )
     ]);
 
-    /*
-     * Components must be loaded before initializing
-     * interactions that depend on their DOM elements.
-     */
-
-    initializeNavigation();
-    initializeCurrentYear();
-
 }
 
 
@@ -116,39 +109,29 @@ function initializeNavigation() {
     });
 
 
-    /*
-     * Close mobile navigation when a navigation link
-     * is selected.
-     */
+    navigation
+        .querySelectorAll("a")
+        .forEach((link) => {
 
-    const navigationLinks =
-        navigation.querySelectorAll("a");
+            link.addEventListener("click", () => {
 
-    navigationLinks.forEach((link) => {
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
-        link.addEventListener("click", () => {
+                menuToggle.classList.remove(
+                    "is-active"
+                );
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+                navigation.classList.remove(
+                    "is-open"
+                );
 
-            menuToggle.classList.remove(
-                "is-active"
-            );
-
-            navigation.classList.remove(
-                "is-open"
-            );
+            });
 
         });
 
-    });
-
-
-    /*
-     * Close the menu when the Escape key is pressed.
-     */
 
     document.addEventListener("keydown", (event) => {
 
@@ -206,15 +189,14 @@ function initializeHeaderScroll() {
         return;
     }
 
-    const updateHeader =
-        () => {
+    const updateHeader = () => {
 
-            header.classList.toggle(
-                "is-scrolled",
-                window.scrollY > 20
-            );
+        header.classList.toggle(
+            "is-scrolled",
+            window.scrollY > 20
+        );
 
-        };
+    };
 
     updateHeader();
 
