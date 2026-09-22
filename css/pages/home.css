@@ -439,10 +439,10 @@
     background: linear-gradient(90deg,#f7f7f5 0%,rgba(247,247,245,.88) 7%,rgba(247,247,245,.2) 42%,rgba(247,247,245,0) 65%);
 }
 .home-program__image--basic {
-    background-image: url("../../assets/images/private-training.webp");
+    background-image: url("../../assets/images/basic-training.webp");
 }
 .home-program__image--advanced {
-    background-image: url("../../assets/images/board-and-train.webp");
+    background-image: url("../../assets/images/advanced-training.webp");
 }
 .home-programs__note {
     margin: 9px 0 0;
