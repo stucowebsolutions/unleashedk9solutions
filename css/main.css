@@ -2,12 +2,9 @@
    UNLEASHED K9 SOLUTIONS
    GLOBAL LAYOUT
    ========================================================= */
-
-
 /* ---------------------------------------------------------
    1. Container
    --------------------------------------------------------- */
-
 .container {
     width: min(
         calc(100% - (var(--container-padding) * 2)),
@@ -16,56 +13,40 @@
 
     margin-inline: auto;
 }
-
-
 /* ---------------------------------------------------------
    2. Main Content
    --------------------------------------------------------- */
-
 main {
     min-height: 60vh;
 }
-
-
 /* ---------------------------------------------------------
    3. Sections
    --------------------------------------------------------- */
-
 .section {
     position: relative;
     padding-block: var(--space-24);
 }
-
 .section--tight {
     padding-block: var(--space-16);
 }
-
 .section--large {
     padding-block: var(--space-32);
 }
-
-
 /* ---------------------------------------------------------
    4. Section Headers
    --------------------------------------------------------- */
-
 .section-header {
     max-width: 720px;
     margin-bottom: var(--space-12);
 }
-
 .section-header--center {
     margin-inline: auto;
     text-align: center;
 }
-
 .section-eyebrow {
     display: inline-block;
-
     margin-bottom: var(--space-3);
-
     color: var(--color-red-light);
-
     font-family: var(--font-body);
     font-size: var(--font-size-sm);
     font-weight: 700;
@@ -73,7 +54,6 @@ main {
     line-height: 1.2;
     text-transform: uppercase;
 }
-
 .section-title {
     font-size: clamp(
         2.5rem,
@@ -81,38 +61,28 @@ main {
         var(--font-size-5xl)
     );
 }
-
 .section-description {
     max-width: 650px;
     margin-top: var(--space-5);
-
     color: var(--color-text-muted);
     font-size: var(--font-size-lg);
 }
-
-
 /* ---------------------------------------------------------
    5. Buttons
    --------------------------------------------------------- */
-
 .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     min-height: 48px;
     padding: 0.75rem 1.5rem;
-
     border: 1px solid transparent;
     border-radius: var(--radius-sm);
-
     font-size: var(--font-size-sm);
     font-weight: 700;
     line-height: 1;
     text-align: center;
-
     cursor: pointer;
-
     transition:
         background-color var(--transition-base),
         border-color var(--transition-base),
@@ -120,136 +90,98 @@ main {
         transform var(--transition-base),
         box-shadow var(--transition-base);
 }
-
 .button:hover {
     transform: translateY(-2px);
 }
-
 .button--primary {
     background: var(--color-red);
     color: var(--color-white);
 }
-
 .button--primary:hover {
     background: var(--color-red-light);
     box-shadow: var(--shadow-sm);
 }
-
 .button--secondary {
     background: var(--color-white);
     color: var(--color-black);
 }
-
 .button--secondary:hover {
     background: #ffffff;
     box-shadow: var(--shadow-sm);
 }
-
 .button--outline {
     border-color: var(--color-border-light);
     background: transparent;
     color: var(--color-white);
 }
-
 .button--outline:hover {
     border-color: var(--color-red-light);
     background: var(--color-red);
 }
-
-
 /* ---------------------------------------------------------
    6. Text Utilities
    --------------------------------------------------------- */
-
 .text-center {
     text-align: center;
 }
-
 .text-muted {
     color: var(--color-text-muted);
 }
-
-
 /* ---------------------------------------------------------
    7. Visibility
    --------------------------------------------------------- */
-
 .visually-hidden {
     position: absolute !important;
-
     width: 1px !important;
     height: 1px !important;
-
     padding: 0 !important;
     margin: -1px !important;
-
     overflow: hidden !important;
-
     clip: rect(0, 0, 0, 0) !important;
     white-space: nowrap !important;
-
     border: 0 !important;
 }
-
-
 /* ---------------------------------------------------------
    8. Images
    --------------------------------------------------------- */
-
 .image-cover {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 .image-contain {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
-
-
 /* ---------------------------------------------------------
    9. Responsive
    --------------------------------------------------------- */
-
 @media (max-width: 768px) {
-
     :root {
         --container-padding: 1.25rem;
     }
-
     .section {
         padding-block: var(--space-20);
     }
-
     .section--large {
         padding-block: var(--space-24);
     }
-
     .section-header {
         margin-bottom: var(--space-10);
     }
-
     .section-description {
         font-size: var(--font-size-base);
     }
-
 }
-
-
 @media (max-width: 480px) {
-
     :root {
         --container-padding: 1rem;
     }
-
     .section {
         padding-block: var(--space-16);
     }
-
     .button {
         width: 100%;
     }
-
 }
