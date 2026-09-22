@@ -1,50 +1,38 @@
-```css
 /* =========================================================
    HOME — REFERENCE DESIGN
 ========================================================= */
 
 /* SHARED */
 .home-eyebrow {
-    margin: 0 0 14px;
+    margin: 0 0 8px;
     color: var(--color-red-light);
-    font-size: .7rem;
-    font-weight: 700;
-    letter-spacing: .18em;
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .16em;
     line-height: 1;
     text-transform: uppercase;
 }
-.home-section-heading {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 50px;
-    margin-bottom: 48px;
-}
 .home-section-heading h2,
 .home-why h2,
-.home-evaluation h2,
-.home-process h2,
-.home-equipment h2 {
+.home-training h2,
+.home-programs h2,
+.home-store h2,
+.home-process h2 {
     margin: 0;
     font-family: var(--font-heading);
-    font-size: clamp(3rem, 5vw, 5.2rem);
+    font-size: clamp(2.8rem,5vw,4.8rem);
     font-weight: 800;
-    line-height: .88;
-    letter-spacing: -.02em;
+    line-height: .86;
+    letter-spacing: -.025em;
     text-transform: uppercase;
 }
 .home-section-heading h2 span,
 .home-why h2 span,
-.home-evaluation h2 span,
-.home-process h2 span,
-.home-equipment h2 span {
+.home-training h2 span,
+.home-programs h2 span,
+.home-store h2 span,
+.home-process h2 span {
     color: var(--color-red-light);
-}
-.home-section-heading > p {
-    max-width: 440px;
-    margin: 0;
-    color: var(--color-text-muted);
-    line-height: 1.7;
 }
 .text-link {
     display: inline-flex;
@@ -73,19 +61,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 32px;
-    min-height: 36px;
+    gap: 28px;
+    min-height: 32px;
 }
 .home-announcement__inner span {
-    color: #aaa;
-    font-size: .58rem;
+    color: #c5c5c5;
+    font-size: .56rem;
     font-weight: 700;
-    letter-spacing: .15em;
+    letter-spacing: .1em;
     text-transform: uppercase;
 }
 .home-announcement__inner span:not(:last-child)::after {
-    content: "/";
-    margin-left: 32px;
+    content: "•";
+    margin-left: 28px;
     color: var(--color-red-light);
 }
 
@@ -94,36 +82,36 @@
     position: relative;
     display: flex;
     align-items: center;
-    min-height: 760px;
+    min-height: 570px;
     overflow: hidden;
     background: var(--color-black);
 }
 .home-hero__media {
     position: absolute;
-    inset: 0 0 0 38%;
+    inset: 0;
     background:
-        linear-gradient(90deg,var(--color-black) 0%,rgba(11,11,11,.9) 8%,rgba(11,11,11,.25) 45%,rgba(11,11,11,.15) 100%),
+        linear-gradient(90deg,rgba(5,5,5,.98) 0%,rgba(5,5,5,.88) 27%,rgba(5,5,5,.25) 58%,rgba(5,5,5,.05) 100%),
         url("../../assets/images/chris-jj-golden-hour.png") center / cover no-repeat;
 }
 .home-hero__media-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg,rgba(0,0,0,.15),transparent 40%,rgba(0,0,0,.45));
+    background: linear-gradient(180deg,rgba(0,0,0,.2),transparent 50%,rgba(0,0,0,.4));
 }
 .home-hero__container {
     position: relative;
     z-index: 2;
 }
 .home-hero__content {
-    width: min(680px,60%);
-    padding: 100px 0;
+    width: min(680px,62%);
+    padding: 65px 0 45px;
 }
 .home-hero__title {
     margin: 0;
     font-family: var(--font-heading);
-    font-size: clamp(5rem,9vw,9rem);
+    font-size: clamp(4rem,7vw,7rem);
     font-weight: 800;
-    line-height: .78;
+    line-height: .8;
     letter-spacing: -.035em;
     text-transform: uppercase;
 }
@@ -136,46 +124,61 @@
     font-weight: inherit;
 }
 .home-hero__description {
-    max-width: 510px;
-    margin: 30px 0 0;
-    color: #d0d0d0;
-    font-size: 1rem;
-    line-height: 1.7;
+    max-width: 530px;
+    margin: 15px 0 0;
+    color: #e0e0e0;
+    font-size: .88rem;
+    line-height: 1.45;
 }
 .home-hero__actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 30px;
+    gap: 8px;
+    margin-top: 17px;
 }
 .home-hero__trust {
     display: flex;
-    flex-wrap: wrap;
     gap: 24px;
-    margin-top: 35px;
-    padding-top: 22px;
-    border-top: 1px solid rgba(255,255,255,.16);
+    margin-top: 22px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,.18);
 }
 .hero-trust-item {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #bdbdbd;
-    font-size: .67rem;
+    color: #cfcfcf;
+    font-size: .57rem;
     font-weight: 700;
-    letter-spacing: .08em;
+    letter-spacing: .04em;
     text-transform: uppercase;
 }
 .hero-trust-item__icon {
     color: var(--color-red-light);
-    font-weight: 900;
+    font-size: 1rem;
+}
+.hero-trust-item span:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.hero-trust-item strong {
+    color: var(--color-white);
+    font-size: .55rem;
+}
+.hero-trust-item small {
+    color: #999;
+    font-size: .48rem;
+    font-weight: 500;
+    letter-spacing: .02em;
+    text-transform: none;
 }
 .home-hero__accent {
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 34%;
-    height: 7px;
+    width: 35%;
+    height: 5px;
     background: var(--color-red);
 }
 
@@ -183,529 +186,523 @@
 .home-why {
     position: relative;
     overflow: hidden;
+    min-height: 185px;
     background: var(--color-surface);
 }
 .home-why__image {
     position: absolute;
-    inset: 0 55% 0 0;
-    min-height: 470px;
+    inset: 0 52% 0 0;
     background:
-        linear-gradient(90deg,rgba(24,24,24,.08),var(--color-surface)),
+        linear-gradient(90deg,rgba(15,15,15,.05),var(--color-surface)),
         url("../../assets/images/chris-jj-training.jpg") center / cover no-repeat;
 }
 .home-why__container {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 80px;
-    min-height: 470px;
+    min-height: 185px;
 }
 .home-why__content {
     grid-column: 2;
-    padding: 80px 0;
+    padding: 28px 0 28px 25px;
 }
 .home-why__content h2 {
-    margin-bottom: 24px;
+    font-size: clamp(2.5rem,4vw,4rem);
 }
 .home-why__content > p:not(.home-eyebrow) {
-    max-width: 520px;
-    margin: 0 0 26px;
-    color: var(--color-text-muted);
-    line-height: 1.75;
+    max-width: 570px;
+    margin: 8px 0 10px;
+    color: #d0d0d0;
+    font-size: .68rem;
+    line-height: 1.4;
 }
 .home-why__badge {
     position: absolute;
-    left: calc(50% - 45px);
-    bottom: 45px;
-    width: 90px;
-    height: 90px;
+    left: calc(50% - 42px);
+    top: 50%;
+    width: 84px;
+    height: 84px;
     display: grid;
     place-items: center;
     border-radius: 50%;
     background: var(--color-red);
+    transform: translateY(-50%);
 }
 .home-why__badge-inner {
-    width: 76px;
-    height: 76px;
+    width: 70px;
+    height: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255,255,255,.5);
+    border: 1px solid rgba(255,255,255,.55);
     border-radius: 50%;
     color: var(--color-white);
     text-align: center;
 }
 .home-why__badge-inner span {
-    font-size: .4rem;
+    font-size: .36rem;
     font-weight: 700;
-    letter-spacing: .14em;
+    letter-spacing: .12em;
 }
 .home-why__badge-inner strong {
     font-family: var(--font-heading);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     line-height: .8;
 }
-.home-why__features {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(4,minmax(0,1fr));
-    border-top: 1px solid var(--color-border);
-}
-.home-why-feature {
-    min-width: 0;
-    min-height: 220px;
-    padding: 30px 28px 30px 0;
-    border-right: 1px solid var(--color-border);
-}
-.home-why-feature:not(:first-child) {
-    padding-left: 28px;
-}
-.home-why-feature:last-child {
-    border-right: 0;
-}
-.home-why-feature__number {
-    display: block;
-    margin-bottom: 22px;
-    color: var(--color-red-light);
-    font-family: var(--font-heading);
-    font-size: 1rem;
-    font-weight: 700;
-}
-.home-why-feature h3 {
-    margin-bottom: 10px;
-    font-family: var(--font-heading);
-    font-size: 1.55rem;
-    font-weight: 700;
-    line-height: .95;
-    text-transform: uppercase;
-}
-.home-why-feature p {
-    max-width: 240px;
-    color: var(--color-text-muted);
-    font-size: .76rem;
-    line-height: 1.65;
-}
 
-/* SERVICES */
-.home-services {
+/* WHAT WE TRAIN */
+.home-training {
     background: var(--color-bg);
 }
-.home-service-grid {
+.home-training__heading {
+    margin-bottom: 18px;
+    text-align: center;
+}
+.home-training__heading h2 {
+    font-size: clamp(2.8rem,5vw,4.5rem);
+}
+.home-training__heading > p:last-child {
+    max-width: 850px;
+    margin: 7px auto 0;
+    color: var(--color-text-muted);
+    font-size: .72rem;
+    line-height: 1.45;
+}
+.home-training-grid {
     display: grid;
-    grid-template-columns: repeat(3,minmax(0,1fr));
+    grid-template-columns: repeat(7,minmax(0,1fr));
     width: 100%;
     border-top: 1px solid var(--color-border);
     border-left: 1px solid var(--color-border);
 }
-.home-service-card {
-    position: relative;
+.home-training-card {
     min-width: 0;
-    min-height: 300px;
-    padding: 34px;
+    min-height: 170px;
+    padding: 15px 9px 13px;
     border-right: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
-    background: var(--color-bg);
+    text-align: center;
     transition: background var(--transition-base),transform var(--transition-base);
 }
-.home-service-card:hover {
-    background: #151515;
-    transform: translateY(-4px);
+.home-training-card:hover {
+    background: #171717;
+    transform: translateY(-3px);
 }
-.home-service-card__number {
-    position: absolute;
-    top: 22px;
-    right: 25px;
-    color: rgba(255,255,255,.08);
-    font-family: var(--font-heading);
-    font-size: 4rem;
-    font-weight: 800;
-}
-.home-service-card__icon {
-    width: 45px;
-    height: 45px;
+.home-training-card__icon {
+    width: 43px;
+    height: 43px;
     display: grid;
     place-items: center;
-    margin-bottom: 25px;
-    border: 1px solid rgba(255,255,255,.15);
-    color: var(--color-red-light);
+    margin: 0 auto 9px;
 }
-.home-service-card__icon span {
-    font-size: .65rem;
-    font-weight: 800;
+.home-training-card__icon svg {
+    width: 39px;
+    height: 39px;
+    fill: none;
+    stroke: var(--color-red-light);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2.4;
 }
-.home-service-card h3 {
-    margin: 0 0 12px;
+.home-training-card h3 {
+    min-height: 29px;
+    margin: 0 0 7px;
     font-family: var(--font-heading);
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 1.05rem;
+    font-weight: 800;
     line-height: .9;
     text-transform: uppercase;
 }
-.home-service-card p {
-    max-width: 350px;
-    margin: 0 0 20px;
+.home-training-card p {
+    margin: 0;
     color: var(--color-text-muted);
-    font-size: .85rem;
-    line-height: 1.7;
+    font-size: .55rem;
+    line-height: 1.35;
 }
-.home-service-card a {
-    display: inline-flex;
-    gap: 8px;
-    color: var(--color-white);
-    font-size: .65rem;
-    font-weight: 700;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-}
-.home-service-card a span {
-    color: var(--color-red-light);
-    transition: transform var(--transition-fast);
-}
-.home-service-card:hover a span {
-    transform: translateX(4px);
+.home-training__note {
+    margin: 8px 0 0;
+    color: var(--color-text-muted);
+    font-size: .6rem;
+    text-align: center;
 }
 
 /* PROGRAMS */
 .home-programs {
-    background: var(--color-black);
+    background: #f2f2f0;
+    color: #111;
+}
+.home-programs__heading {
+    margin-bottom: 15px;
+}
+.home-programs__heading .home-eyebrow {
+    margin-bottom: 4px;
+}
+.home-programs__heading h2 {
+    color: #111;
 }
 .home-program-list {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    width: 100%;
+    display: grid;
+    gap: 12px;
 }
 .home-program {
+    position: relative;
     display: grid;
-    grid-template-columns: minmax(0,1fr) minmax(0,1fr);
-    width: 100%;
-    min-height: 520px;
+    grid-template-columns: minmax(0,1fr) minmax(280px,43%);
+    min-height: 210px;
     overflow: hidden;
-    background: var(--color-surface);
-}
-.home-program--reverse .home-program__image {
-    order: 2;
-}
-.home-program--reverse .home-program__content {
-    order: 1;
-}
-.home-program__image {
-    min-width: 0;
-    min-height: 520px;
-    background-position: center;
-    background-size: cover;
-    transition: transform 700ms cubic-bezier(.22,1,.36,1);
-}
-.home-program__image--private {
-    background:
-        linear-gradient(180deg,transparent,rgba(0,0,0,.3)),
-        url("../../assets/images/private-training.jpg") center / cover no-repeat;
-}
-.home-program__image--board {
-    background:
-        linear-gradient(180deg,transparent,rgba(0,0,0,.3)),
-        url("../../assets/images/board-and-train.jpg") center / cover no-repeat;
-}
-.home-program:hover .home-program__image {
-    transform: scale(1.025);
+    border: 1px solid #b8b8b8;
+    background: #f7f7f5;
 }
 .home-program__content {
+    position: relative;
+    z-index: 2;
     min-width: 0;
-    padding: 65px;
+    padding: 17px 20px 15px;
 }
-.home-program__number {
-    color: var(--color-red-light);
-    font-size: .65rem;
-    font-weight: 800;
-    letter-spacing: .15em;
-    text-transform: uppercase;
+.home-program__title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
 }
 .home-program__content h3 {
-    margin: 14px 0 20px;
+    margin: 0;
+    color: #111;
     font-family: var(--font-heading);
-    font-size: clamp(3rem,5vw,5rem);
+    font-size: clamp(2rem,3vw,3rem);
     font-weight: 800;
     line-height: .82;
     text-transform: uppercase;
 }
+.home-program__length {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 5px;
+    color: var(--color-red);
+    font-size: .55rem;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+.home-program__length svg {
+    width: 15px;
+    height: 15px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
 .home-program__content > p {
-    max-width: 480px;
-    color: var(--color-text-muted);
-    line-height: 1.75;
+    max-width: 490px;
+    margin: 8px 0 8px;
+    color: #333;
+    font-size: .65rem;
+    line-height: 1.4;
 }
 .home-program__content ul {
     display: grid;
-    gap: 10px;
-    margin: 28px 0;
+    gap: 3px;
+    margin: 0 0 9px;
 }
 .home-program__content li {
     display: flex;
-    gap: 10px;
-    color: #d0d0d0;
-    font-size: .8rem;
+    gap: 6px;
+    color: #333;
+    font-size: .57rem;
+    line-height: 1.3;
 }
 .home-program__content li::before {
     content: "✓";
-    color: var(--color-red-light);
-    font-weight: 800;
+    flex-shrink: 0;
+    color: var(--color-red);
+    font-size: .65rem;
+    font-weight: 900;
+}
+.home-program__image {
+    position: relative;
+    min-height: 210px;
+    background-position: center;
+    background-size: cover;
+}
+.home-program__image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,#f7f7f5 0%,rgba(247,247,245,.8) 7%,rgba(247,247,245,0) 48%);
+}
+.home-program__image--basic {
+    background-image: url("../../assets/images/private-training.jpg");
+}
+.home-program__image--advanced {
+    background-image: url("../../assets/images/board-and-train.jpg");
+}
+.home-programs__note {
+    margin: 7px 0 0;
+    color: #555;
+    font-size: .56rem;
+    text-align: center;
 }
 
-/* EVALUATION + PROCESS */
-.home-evaluation-process {
+/* STORE + HOW IT WORKS */
+.home-store-process {
     background: var(--color-bg);
 }
-.home-ep-grid {
+.home-store-process__grid {
     display: grid;
-    grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+    grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr);
 }
-.home-evaluation,
-.home-process {
-    padding: 20px 60px 20px 0;
+.home-store {
+    min-width: 0;
+    padding-right: 28px;
+}
+.home-store h2,
+.home-process h2 {
+    font-size: clamp(2.4rem,4vw,4rem);
+}
+.home-store__intro {
+    max-width: 620px;
+    margin: 7px 0 14px;
+    color: var(--color-text-muted);
+    font-size: .65rem;
+    line-height: 1.45;
+}
+.home-store__products {
+    display: grid;
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    gap: 7px;
+}
+.home-store-product {
+    min-width: 0;
+    padding: 7px 8px 9px;
+    border: 1px solid var(--color-border);
+    border-radius: 2px;
+    background: #f0f0ef;
+    color: #111;
+}
+.home-store-product__image {
+    height: 70px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 4px;
+}
+.home-store-product__image svg {
+    width: 82px;
+    height: 65px;
+    fill: #222;
+    stroke: #222;
+    stroke-width: 2;
+}
+.home-store-product h3 {
+    margin: 0 0 3px;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: .9;
+    text-transform: uppercase;
+}
+.home-store-product p {
+    margin: 0;
+    color: #444;
+    font-size: .51rem;
+    line-height: 1.3;
+}
+.home-store__button,
+.home-process__button {
+    display: flex;
+    width: max-content;
+    margin: 12px auto 0;
 }
 .home-process {
-    padding: 20px 0 20px 60px;
+    min-width: 0;
+    padding-left: 28px;
     border-left: 1px solid var(--color-border);
 }
-.home-evaluation > p:not(.home-eyebrow) {
-    max-width: 500px;
-    margin: 25px 0 0;
-    color: var(--color-text-muted);
-    line-height: 1.7;
-}
-.home-evaluation .button {
-    margin-top: 30px;
-}
 .home-process__list {
-    margin-top: 45px;
-    border-top: 1px solid var(--color-border);
+    margin-top: 13px;
 }
 .home-process__step {
     display: grid;
-    grid-template-columns: 55px 1fr;
-    gap: 18px;
-    padding: 23px 0;
-    border-bottom: 1px solid var(--color-border);
+    grid-template-columns: 32px 1fr;
+    gap: 9px;
+    align-items: start;
+    margin-bottom: 8px;
 }
 .home-process__step > span {
-    color: var(--color-red-light);
+    width: 29px;
+    height: 29px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-red);
+    color: var(--color-white);
     font-family: var(--font-heading);
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 1.05rem;
+    font-weight: 800;
 }
 .home-process__step h3 {
-    margin: 0 0 7px;
+    margin: 0 0 2px;
     font-family: var(--font-heading);
-    font-size: 1.6rem;
+    font-size: 1.05rem;
+    font-weight: 800;
+    line-height: .9;
     text-transform: uppercase;
 }
 .home-process__step p {
     margin: 0;
     color: var(--color-text-muted);
-    font-size: .8rem;
-    line-height: 1.6;
-}
-
-/* EQUIPMENT */
-.home-equipment {
-    background: var(--color-surface);
-}
-.home-equipment__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    padding: 25px 0;
-}
-.home-equipment__inner h2 {
-    margin-bottom: 18px;
-}
-.home-equipment__inner > div > p:last-child {
-    max-width: 500px;
-    margin: 0;
-    color: var(--color-text-muted);
-    line-height: 1.7;
-}
-
-/* FINAL CTA */
-.home-final-cta {
-    position: relative;
-    min-height: 530px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    background: var(--color-black);
-}
-.home-final-cta__background {
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(90deg,rgba(11,11,11,.97),rgba(11,11,11,.68)),
-        url("../../assets/images/client-dog-training.jpg") center / cover no-repeat;
-}
-.home-final-cta__content {
-    position: relative;
-    z-index: 1;
-    max-width: 700px;
-}
-.home-final-cta h2 {
-    margin: 0;
-    font-family: var(--font-heading);
-    font-size: clamp(4rem,8vw,8rem);
-    font-weight: 800;
-    line-height: .8;
-    text-transform: uppercase;
-}
-.home-final-cta h2 span {
-    display: block;
-    color: var(--color-red-light);
-}
-.home-final-cta__content > p:not(.home-eyebrow) {
-    max-width: 500px;
-    margin: 28px 0 32px;
-    color: var(--color-text-muted);
-    line-height: 1.7;
+    font-size: .56rem;
+    line-height: 1.35;
 }
 
 /* TABLET */
+@media (max-width: 1100px) {
+    .home-training-grid {
+        grid-template-columns: repeat(4,minmax(0,1fr));
+    }
+    .home-store-process__grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    .home-store {
+        padding-right: 0;
+    }
+    .home-process {
+        padding: 30px 0 0;
+        border-top: 1px solid var(--color-border);
+        border-left: 0;
+    }
+}
 @media (max-width: 900px) {
     .home-hero {
-        min-height: 700px;
+        min-height: 650px;
     }
     .home-hero__media {
-        inset: 0;
         background:
-            linear-gradient(90deg,rgba(11,11,11,.96),rgba(11,11,11,.55)),
+            linear-gradient(90deg,rgba(5,5,5,.96),rgba(5,5,5,.62)),
             url("../../assets/images/chris-jj-golden-hour.png") center / cover no-repeat;
     }
     .home-hero__content {
         width: 75%;
     }
-    .home-why__features {
-        grid-template-columns: repeat(2,minmax(0,1fr));
+    .home-why__image {
+        inset: 0 50% 0 0;
     }
-    .home-why-feature:nth-child(2) {
-        border-right: 0;
+    .home-why__container {
+        grid-template-columns: 1fr 1fr;
     }
-    .home-service-grid {
+    .home-program {
+        grid-template-columns: 1fr 42%;
+    }
+    .home-program__content {
+        padding: 16px;
+    }
+    .home-program__title-row {
+        display: block;
+    }
+    .home-program__length {
+        margin-top: 5px;
+    }
+}
+@media (max-width: 700px) {
+    .home-training-grid {
         grid-template-columns: repeat(2,minmax(0,1fr));
     }
     .home-program {
         grid-template-columns: 1fr;
     }
     .home-program__image {
-        min-height: 350px;
+        min-height: 220px;
+        grid-row: 1;
     }
-    .home-program--reverse .home-program__image {
-        order: 1;
+    .home-program__content {
+        grid-row: 2;
     }
-    .home-program--reverse .home-program__content {
-        order: 2;
+    .home-program__image::before {
+        background: linear-gradient(180deg,rgba(247,247,245,0) 45%,#f7f7f5 100%);
     }
-    .home-ep-grid {
-        grid-template-columns: 1fr;
-        gap: 70px;
-    }
-    .home-evaluation,
-    .home-process {
-        padding: 0;
-    }
-    .home-process {
-        border-left: 0;
-        padding-top: 60px;
-        border-top: 1px solid var(--color-border);
+    .home-store__products {
+        grid-template-columns: repeat(2,minmax(0,1fr));
     }
 }
 
 /* MOBILE */
 @media (max-width: 640px) {
     .home-announcement__inner {
-        gap: 12px;
-        padding: 9px 0;
+        gap: 10px;
+        padding: 7px 0;
     }
     .home-announcement__inner span {
-        font-size: .48rem;
-        letter-spacing: .1em;
+        font-size: .45rem;
+        letter-spacing: .07em;
     }
     .home-announcement__inner span:not(:last-child)::after {
-        margin-left: 12px;
-    }
-    .home-section-heading {
-        display: block;
-    }
-    .home-section-heading > p {
-        margin-top: 25px;
-    }
-    .home-section-heading > .text-link {
-        margin-top: 25px;
+        margin-left: 10px;
     }
     .home-hero {
-        min-height: 680px;
+        min-height: 620px;
     }
     .home-hero__content {
         width: 100%;
-        padding: 80px 0;
+        padding: 70px 0 40px;
     }
     .home-hero__title {
-        font-size: clamp(4rem,18vw,6rem);
+        font-size: clamp(3.8rem,17vw,5.5rem);
     }
     .home-hero__description {
-        font-size: .9rem;
-    }
-    .home-hero__trust {
-        gap: 12px 18px;
+        font-size: .78rem;
     }
     .home-hero__actions {
         flex-direction: column;
+        align-items: stretch;
+    }
+    .home-hero__trust {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    .home-why {
+        min-height: auto;
     }
     .home-why__image {
         inset: 0;
-        opacity: .18;
+        opacity: .15;
     }
     .home-why__container {
         display: block;
-        min-height: 550px;
+        min-height: auto;
     }
     .home-why__content {
-        padding: 80px 0;
+        padding: 55px 0;
     }
     .home-why__badge {
         display: none;
     }
-    .home-why__features {
-        grid-template-columns: 1fr;
+    .home-training-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
     }
-    .home-why-feature,
-    .home-why-feature:not(:first-child) {
-        min-height: auto;
-        padding: 28px 0;
-        border-right: 0;
-        border-bottom: 1px solid var(--color-border);
+    .home-training-card {
+        min-height: 185px;
     }
-    .home-why-feature:last-child {
-        border-bottom: 0;
+    .home-program__content h3 {
+        font-size: 2.2rem;
     }
-    .home-service-grid {
-        grid-template-columns: 1fr;
+    .home-store__products {
+        grid-template-columns: 1fr 1fr;
     }
-    .home-service-card {
-        min-height: 260px;
-    }
-    .home-program__content {
-        padding: 40px 28px;
-    }
-    .home-program__image {
-        min-height: 280px;
-    }
-    .home-equipment__inner {
-        display: block;
-    }
-    .home-equipment__inner .button {
-        margin-top: 25px;
-    }
-    .home-final-cta {
-        min-height: 500px;
+    .home-store-process__grid {
+        gap: 28px;
     }
 }
-```
+@media (max-width: 420px) {
+    .home-training-grid,
+    .home-store__products {
+        grid-template-columns: 1fr;
+    }
+    .home-training-card {
+        min-height: auto;
+    }
+}
