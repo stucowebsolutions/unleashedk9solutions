@@ -91,7 +91,7 @@
     inset: 0;
     background:
         linear-gradient(90deg,rgba(5,5,5,.98) 0%,rgba(5,5,5,.88) 27%,rgba(5,5,5,.25) 58%,rgba(5,5,5,.05) 100%),
-        url("../../assets/images/chris-jj-golden-hour.png") center / cover no-repeat;
+        url("../../assets/images/chris-jj-golden-hour.webp") center / cover no-repeat;
 }
 .home-hero__media-overlay {
     position: absolute;
@@ -194,7 +194,7 @@
     inset: 0 52% 0 0;
     background:
         linear-gradient(90deg,rgba(15,15,15,.05),var(--color-surface)),
-        url("../../assets/images/chris-jj-training.jpg") center / cover no-repeat;
+        url("../../assets/images/training.webp") center / cover no-repeat;
 }
 .home-why__container {
     position: relative;
@@ -435,10 +435,10 @@
     background: linear-gradient(90deg,#f7f7f5 0%,rgba(247,247,245,.8) 7%,rgba(247,247,245,0) 48%);
 }
 .home-program__image--basic {
-    background-image: url("../../assets/images/private-training.jpg");
+    background-image: url("../../assets/images/private-training.webp");
 }
 .home-program__image--advanced {
-    background-image: url("../../assets/images/board-and-train.jpg");
+    background-image: url("../../assets/images/board-and-train.webp");
 }
 .home-programs__note {
     margin: 7px 0 0;
@@ -583,7 +583,7 @@
     .home-hero__media {
         background:
             linear-gradient(90deg,rgba(5,5,5,.96),rgba(5,5,5,.62)),
-            url("../../assets/images/chris-jj-golden-hour.png") center / cover no-repeat;
+            url("../../assets/images/chris-jj-golden-hour.webp") center / cover no-repeat;
     }
     .home-hero__content {
         width: 75%;
