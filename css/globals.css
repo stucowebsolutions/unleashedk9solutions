@@ -2,32 +2,40 @@
    UNLEASHED K9 SOLUTIONS
    GLOBAL DESIGN TOKENS
    ========================================================= */
-
-
 /* ---------------------------------------------------------
    1. Root Variables
    --------------------------------------------------------- */
-
 :root {
+    /* ==========================================
+       BRAND COLORS
+    ========================================== */
 
-    /* Colors */
-    --color-black: #0b0b0b;
-    --color-bg: #111111;
-    --color-surface: #181818;
-    --color-surface-light: #222222;
+    --color-black: #0a0c0f;
 
-    --color-red: #7b2631;
-    --color-red-dark: #5f1d26;
-    --color-red-light: #96313c;
+    --color-bg: #111418;
+    --color-surface: #171b20;
+    --color-surface-light: #1f252c;
 
-    --color-white: #f5f5f5;
-    --color-text: #dddddd;
-    --color-text-muted: #999999;
+    --color-silver: #c7ccd3;
+    --color-silver-dark: #9da5af;
+    --color-silver-light: #e3e6ea;
 
-    --color-border: rgba(255, 255, 255, 0.12);
-    --color-border-light: rgba(255, 255, 255, 0.2);
+    --color-red: #8b1e24;
+    --color-red-dark: #68161a;
+    --color-red-light: #b22931;
 
-    /* Typography */
+    --color-white: #f5f7fa;
+
+    --color-text: #dde2e8;
+    --color-text-muted: #9ba4ae;
+
+    --color-border: rgba(199, 204, 211, 0.12);
+    --color-border-light: rgba(199, 204, 211, 0.22);
+
+    /* ==========================================
+       TYPOGRAPHY
+    ========================================== */
+
     --font-heading: "Barlow Condensed", sans-serif;
     --font-body: "Inter", sans-serif;
 
@@ -38,15 +46,18 @@
     --font-size-xl: 1.25rem;
     --font-size-2xl: 1.5rem;
     --font-size-3xl: 2rem;
-    --font-size-4xl: 2.5rem;
-    --font-size-5xl: 3.5rem;
-    --font-size-6xl: 4.5rem;
+    --font-size-4xl: 2.75rem;
+    --font-size-5xl: 4rem;
+    --font-size-6xl: 5rem;
 
     --line-height-tight: 1.05;
     --line-height-snug: 1.2;
-    --line-height-normal: 1.6;
+    --line-height-normal: 1.7;
 
-    /* Spacing */
+    /* ==========================================
+       SPACING
+    ========================================== */
+
     --space-1: 0.25rem;
     --space-2: 0.5rem;
     --space-3: 0.75rem;
@@ -61,23 +72,39 @@
     --space-24: 6rem;
     --space-32: 8rem;
 
-    /* Layout */
-    --container-width: 1200px;
+    /* ==========================================
+       LAYOUT
+    ========================================== */
+
+    --container-width: 1320px;
     --container-padding: 1.5rem;
 
     --header-height: 84px;
 
-    /* Borders */
-    --border-width: 1px;
+    /* ==========================================
+       RADII
+    ========================================== */
 
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
 
-    /* Effects */
-    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.4);
+    /* ==========================================
+       SHADOWS
+    ========================================== */
+
+    --shadow-sm:
+        0 8px 24px rgba(0, 0, 0, 0.25);
+
+    --shadow-md:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+
+    --shadow-lg:
+        0 30px 80px rgba(0, 0, 0, 0.45);
+
+    /* ==========================================
+       TRANSITIONS
+    ========================================== */
 
     --transition-fast: 180ms ease;
     --transition-base: 300ms ease;
