@@ -131,6 +131,7 @@
     object-fit: contain;
 }
 .service-card__content h3 {
+    color: var(--color-text-muted);
     margin: 0 0 1rem;
     font-family: "Barlow Condensed",sans-serif;
     font-size: 1.8rem;
