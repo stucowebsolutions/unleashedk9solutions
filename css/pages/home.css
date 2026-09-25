@@ -209,10 +209,10 @@
 .home-why__badge {
     overflow: visible;
     position: absolute;
-    left: calc(38.5%);
-    top: 0%;
-    width: 168px;
-    height: 168px;
+    left: 38.5%;
+    top: 0;
+    width: clamp(115px,12vw,168px);
+    height: clamp(115px,12vw,168px);
     display: grid;
     place-items: center;
     border-radius: 50%;
@@ -221,16 +221,13 @@
 .home-why__badge::before {
     content: "";
     position: absolute;
+    inset: 0 -1px -5px 0;
+    z-index: -1;
     background: url("../../assets/logos/logo.png") center/cover no-repeat;
-    top: 0;
-    left: 0;
-    right: -1px;
-    bottom: -5px;
-    z-index: -1; /* Keeps the background behind your text */
 }
 .home-why__badge-inner {
-    width: 120px;
-    height: 120px;
+    width: 72%;
+    height: 72%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -240,13 +237,13 @@
     text-align: center;
 }
 .home-why__badge-inner span {
-    font-size: .4rem;
+    font-size: clamp(.3rem,.45vw,.4rem);
     font-weight: 700;
     letter-spacing: .12em;
 }
 .home-why__badge-inner strong {
     font-family: var(--font-heading);
-    font-size: 1.7rem;
+    font-size: clamp(1.25rem,2vw,1.7rem);
     line-height: .8;
 }
 .home-training {
@@ -267,13 +264,15 @@
     line-height: 1.5;
 }
 .home-training-grid {
-    display: grid;
-    grid-template-columns: repeat(7,minmax(0,1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
     border-top: 1px solid var(--color-border);
     border-left: 1px solid var(--color-border);
 }
 .home-training-card {
+    flex: 0 0 calc((100% - 6px) / 7);
     min-width: 0;
     min-height: 210px;
     padding: 22px 12px 18px;
@@ -284,7 +283,7 @@
 }
 .home-training-card:hover {
     background: #171717;
-    transform: translateY(-10px) scale(1.2);
+    transform: translateY(-6px) scale(1.02);
 }
 .home-training-card__icon {
     width: 52px;
@@ -301,6 +300,10 @@
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 2.4;
+    transition: transform var(--transition-base);
+}
+.home-training-card:hover .home-training-card__icon svg {
+    transform: translateY(-3px);
 }
 .home-training-card h3 {
     min-height: 34px;
@@ -327,7 +330,7 @@
     background: #f2f2f0;
     color: #111;
 }
-.program-container{
+.program-container {
     margin-inline: var(--space-6);
     width: auto;
 }
@@ -342,13 +345,14 @@
 }
 .home-program-list {
     display: grid;
-    grid-template-columns: repeat(2,minmax(0,1fr));
+    grid-template-columns: 1fr;
+    gap: 20px;
     width: 100%;
 }
 .home-program {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(0,2fr) minmax(360px,20%);
+    grid-template-columns: minmax(0,1fr) minmax(360px,46%);
     min-width: 0;
     min-height: 420px;
     overflow: hidden;
@@ -363,7 +367,7 @@
 }
 .home-program__title-row {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 20px;
 }
@@ -377,9 +381,12 @@
     text-transform: uppercase;
 }
 .home-program__length {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    z-index: 4;
     display: inline-flex;
     align-items: center;
-    flex-shrink: 0;
     gap: 8px;
     color: var(--color-red);
     font-size: var(--font-size-sm);
@@ -429,20 +436,25 @@
     position: relative;
     min-width: 0;
     min-height: 420px;
-    background-position: center;
-    background-size: cover;
+    background-position: center bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #e7e7e5;
 }
 .home-program__image::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg,#f7f7f5 0%,rgba(247,247,245,.88) 7%,rgba(247,247,245,.2) 42%,rgba(247,247,245,0) 65%);
+    background: linear-gradient(90deg,#f7f7f5 0%,rgba(247,247,245,.88) 7%,rgba(247,247,245,.15) 42%,rgba(247,247,245,0) 65%);
 }
 .home-program__image--basic {
     background-image: url("../../assets/images/basic-training.webp");
 }
 .home-program__image--advanced {
     background-image: url("../../assets/images/advanced-training.webp");
+}
+.home-program__image:hover {
+    background-size: 102%;
 }
 .home-programs__note {
     margin: 9px 0 0;
@@ -488,7 +500,7 @@
     transition: background var(--transition-base),transform var(--transition-base);
 }
 .home-store-product:hover {
-    transform: translateY(-10px) scale(1.15);
+    transform: translateY(-6px) scale(1.02);
 }
 .home-store-product__image {
     height: 80px;
@@ -541,7 +553,7 @@
     transition: background var(--transition-base),transform var(--transition-base);
 }
 .home-process__step:hover {
-    transform: translatex(20px) scale(1.15);
+    transform: translateX(8px);
 }
 .home-process__step > span {
     width: 34px;
@@ -569,9 +581,10 @@
     font-size: var(--font-size-sm);
     line-height: 1.45;
 }
+
 @media (max-width: 1100px) {
-    .home-training-grid {
-        grid-template-columns: repeat(4,minmax(0,1fr));
+    .home-training-card {
+        flex-basis: calc((100% - 18px) / 4);
     }
     .home-store-process__grid {
         grid-template-columns: 1fr;
@@ -585,65 +598,133 @@
         border-top: 1px solid var(--color-border);
         border-left: 0;
     }
+    .home-program {
+        grid-template-columns: minmax(0,1fr) minmax(320px,42%);
+    }
 }
-@media (max-width: 900px) {
-    .home-hero {
-        min-height: 650px;
-    }
-    .home-hero__media {
-        inset: 0 1rem 0 15%;
-        background:
-            linear-gradient(90deg,rgba(5,5,5,.96),rgba(5,5,5,.62)),
-            url("../../assets/images/chris-jj-golden-hour.webp") right center / cover no-repeat;
-    }
-    .home-hero__content {
-        width: 75%;
-    }
-    .home-why__image {
-        inset: 0 50% 0 1rem;
-    }
-    .home-why__container {
-        grid-template-columns: 1fr 1fr;
+
+@media (max-width: 1000px) {
+    .home-training-card {
+        flex-basis: calc((100% - 18px) / 4);
     }
     .home-program {
-        grid-template-columns: minmax(0,1fr) 42%;
-        min-height: 360px;
+        min-height: 450px;
+        grid-template-columns: minmax(0,1fr) minmax(300px,38%);
     }
     .home-program__content {
-        padding: 22px;
+        padding: 32px 28px 30px;
     }
-    .home-program__title-row {
-        display: block;
+    .home-program__image {
+        min-height: 450px;
+        background-size: contain;
+        background-position: center bottom;
     }
     .home-program__length {
-        margin-top: 8px;
-    }
-    .home-program__image {
-        min-height: 360px;
+        top: 26px;
+        right: 26px;
     }
 }
-@media (max-width: 700px) {
-    .home-training-grid {
-        grid-template-columns: repeat(2,minmax(0,1fr));
+
+@media (max-width: 900px) {
+    .home-hero {
+        display: block;
+        min-height: 0;
+        padding-bottom: 0;
     }
-    .home-program {
-        grid-template-columns: 1fr;
+    .home-hero__media {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: clamp(360px,48vw,500px);
+        background:
+            linear-gradient(180deg,rgba(5,5,5,.05) 0%,rgba(5,5,5,.05) 55%,rgba(10,12,15,.98) 100%),
+            url("../../assets/images/chris-jj-golden-hour.webp") center top / cover no-repeat;
+    }
+    .home-hero__media-overlay {
+        background: linear-gradient(180deg,rgba(0,0,0,.05),transparent 50%,rgba(0,0,0,.35));
+    }
+    .home-hero__container {
+        background: var(--color-black);
+    }
+    .home-hero__content {
+        width: 100%;
+        padding: 45px 0 50px;
+    }
+    .home-hero__title {
+        font-size: clamp(4rem,10vw,6rem);
+    }
+    .home-hero__description {
+        max-width: 700px;
+    }
+    .home-why {
         min-height: 0;
     }
-    .home-program__image {
-        min-height: 240px;
-        grid-row: 1;
+    .home-why__image {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: clamp(380px,65vw,600px);
+        background:
+            linear-gradient(180deg,rgba(23,27,32,0) 55%,rgba(23,27,32,.18) 75%,var(--color-surface) 100%),
+            url("../../assets/images/training.webp") center top / cover no-repeat;
+    }
+    .home-why__container {
+        display: block;
+        min-height: 0;
+        margin-top: -35px;
+    }
+    .home-why__content {
+        position: relative;
+        z-index: 2;
+        padding: 38px 0 45px;
+        background: var(--color-surface);
+        box-shadow: 0 -12px 30px rgba(0,0,0,.28);
+    }
+    .home-why__badge {
+        position: absolute;
+        left: auto;
+        right: 6%;
+        top: -70px;
+        width: clamp(105px,13vw,145px);
+        height: clamp(105px,13vw,145px);
+        transform: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .home-training-card {
+        flex-basis: calc((100% - 6px) / 2);
+    }
+    .home-training-card:hover,
+    .home-store-product:hover,
+    .home-process__step:hover,
+    .home-program__image:hover {
+        transform: none;
+    }
+    .home-program {
+        min-height: 470px;
+        grid-template-columns: minmax(0,1fr) minmax(200px,34%);
     }
     .home-program__content {
-        grid-row: 2;
+        padding: 30px 22px 28px;
     }
-    .home-program__image::before {
-        background: linear-gradient(180deg,rgba(247,247,245,0) 45%,#f7f7f5 100%);
+    .home-program__content h3 {
+        font-size: clamp(2.5rem,10vw,3.5rem);
+        padding-right: 85px;
+    }
+    .home-program__length {
+        top: 22px;
+        right: 20px;
+        font-size: var(--font-size-xs);
+    }
+    .home-program__image {
+        min-height: 470px;
     }
     .home-store__products {
         grid-template-columns: repeat(2,minmax(0,1fr));
     }
 }
+
 @media (max-width: 640px) {
     .home-announcement__inner {
         gap: 10px;
@@ -656,70 +737,170 @@
     .home-announcement__inner span:not(:last-child)::after {
         margin-left: 10px;
     }
-    .home-hero {
-        min-height: 620px;
-    }
     .home-hero__media {
-        inset: 0;
-        background:
-            linear-gradient(90deg,rgba(5,5,5,.96),rgba(5,5,5,.62)),
-            url("../../assets/images/chris-jj-golden-hour.webp") center / cover no-repeat;
+        height: clamp(300px,78vw,390px);
     }
     .home-hero__content {
-        width: 100%;
-        padding: 70px 0 40px;
+        padding: 38px 0 42px;
     }
     .home-hero__title {
         font-size: clamp(3.8rem,17vw,5.5rem);
     }
     .home-hero__description {
-        font-size: .82rem;
+        max-width: none;
+        margin-top: 18px;
+        font-size: .9rem;
     }
     .home-hero__actions {
         flex-direction: column;
         align-items: stretch;
+        margin-top: 20px;
     }
     .home-hero__trust {
         display: grid;
         grid-template-columns: 1fr;
         gap: 8px;
-    }
-    .home-why {
-        min-height: auto;
+        margin-top: 24px;
     }
     .home-why__image {
-        inset: 0;
-        opacity: .15;
+        height: clamp(320px,80vw,480px);
     }
     .home-why__container {
-        display: block;
-        min-height: auto;
+        margin-top: -28px;
     }
     .home-why__content {
-        padding: 55px 0;
+        padding: 32px 0 45px;
+    }
+    .home-why__content h2 {
+        font-size: clamp(2.8rem,13vw,4.2rem);
+    }
+    .home-why__content > p:not(.home-eyebrow) {
+        font-size: .9rem;
+        line-height: 1.55;
     }
     .home-why__badge {
-        display: none;
+        top: -60px;
+        right: 5%;
+        width: clamp(95px,22vw,125px);
+        height: clamp(95px,22vw,125px);
     }
-    .home-training-grid {
-        grid-template-columns: repeat(2,minmax(0,1fr));
+    .home-training__heading {
+        margin-bottom: 22px;
+    }
+    .home-training__heading > p:last-child {
+        font-size: var(--font-size-sm);
     }
     .home-training-card {
         min-height: 200px;
+        padding: 20px 10px 18px;
+    }
+    .home-training-card__icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 12px;
+    }
+    .home-training-card__icon svg {
+        width: 46px;
+        height: 46px;
+    }
+    .home-training-card h3 {
+        font-size: var(--font-size-lg);
+    }
+    .home-training-card p {
+        font-size: var(--font-size-xs);
+    }
+    .home-program {
+        min-height: 490px;
+        grid-template-columns: minmax(0,1fr) minmax(145px,30%);
+    }
+    .home-program__content {
+        padding: 28px 20px 28px;
     }
     .home-program__content h3 {
-        font-size: 2.5rem;
+        padding-right: 75px;
+    }
+    .home-program__length {
+        top: 20px;
+        right: 18px;
+    }
+    .home-program__image {
+        min-height: 490px;
+    }
+    .home-program__content > p {
+        margin: 14px 0;
+        font-size: .9rem;
+    }
+    .home-program__content li {
+        font-size: .85rem;
     }
     .home-store__products {
         grid-template-columns: 1fr 1fr;
     }
 }
-@media (max-width: 420px) {
+
+@media (max-width: 480px) {
+    .home-hero__media {
+        height: 270px;
+    }
+    .home-hero__content {
+        padding-top: 32px;
+    }
+    .home-hero__title {
+        font-size: clamp(3.4rem,16vw,5rem);
+    }
+    .home-hero__description {
+        font-size: .86rem;
+    }
+    .home-why__image {
+        height: 360px;
+    }
+    .home-why__container {
+        margin-top: -25px;
+    }
+    .home-why__content {
+        padding-top: 30px;
+    }
+    .home-why__badge {
+        width: 100px;
+        height: 100px;
+        top: -55px;
+    }
     .home-training-grid,
     .home-store__products {
         grid-template-columns: 1fr;
     }
+    .home-training-grid {
+        display: flex;
+    }
     .home-training-card {
+        flex-basis: 100%;
         min-height: auto;
+    }
+    .home-program {
+        grid-template-columns: minmax(0,1fr) 115px;
+        min-height: 500px;
+    }
+    .home-program__image {
+        min-height: 500px;
+    }
+    .home-program__content h3 {
+        font-size: 2.7rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .home-hero__media {
+        height: 235px;
+    }
+    .home-why__image {
+        height: 300px;
+    }
+    .home-why__container {
+        margin-top: -20px;
+    }
+    .home-why__badge {
+        width: 88px;
+        height: 88px;
+        top: -50px;
     }
 }
