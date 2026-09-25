@@ -78,7 +78,7 @@
     background: #c62828;
 }
 .services-list {
-    background: #f4f4f2;
+    background: var(--color-bg);
 }
 .services-list__heading {
     max-width: 760px;
@@ -220,7 +220,7 @@
     font-weight: 700;
 }
 .services-cta {
-    background: #f4f4f2;
+    background: var(--color-bg);
 }
 .services-cta__container {
     display: flex;
