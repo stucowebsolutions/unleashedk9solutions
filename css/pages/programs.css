@@ -1,1 +1,508 @@
+.programs-hero {
+    position: relative;
+    min-height: 820px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--background);
+}
 
+.programs-hero__image {
+    position: absolute;
+    inset: 0;
+    background: url("../../assets/images/chris-jj-golden-hour.webp") center / cover no-repeat;
+    transform: scale(1.04);
+}
+
+.programs-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(8,8,8,.9) 0%, rgba(8,8,8,.65) 45%, rgba(8,8,8,.3) 100%);
+}
+
+.programs-hero__container {
+    position: relative;
+    z-index: 2;
+}
+
+.programs-hero__content {
+    max-width: 760px;
+    padding-top: 5rem;
+}
+
+.programs-eyebrow {
+    margin: 0 0 1rem;
+    color: var(--accent);
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.programs-hero h1,
+.program-showcase h2,
+.program-custom h2,
+.programs-section-heading h2,
+.program-pricing h2 {
+    margin: 0;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    line-height: .9;
+    letter-spacing: -.025em;
+    text-transform: uppercase;
+}
+
+.programs-hero h1 {
+    max-width: 760px;
+    font-size: clamp(4rem,8vw,8rem);
+}
+
+.programs-hero h1 span,
+.program-showcase h2 span,
+.program-custom h2 span,
+.programs-section-heading h2 span,
+.program-pricing h2 span {
+    color: var(--accent);
+}
+
+.programs-hero__content > p:not(.programs-eyebrow) {
+    max-width: 620px;
+    margin: 1.75rem 0 0;
+    color: rgba(255,255,255,.78);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.programs-hero__content .button {
+    margin-top: 2rem;
+}
+
+.programs-hero__scroll {
+    position: absolute;
+    z-index: 2;
+    right: 3rem;
+    bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: rgba(255,255,255,.65);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+}
+
+.programs-hero__scroll-line {
+    width: 1px;
+    height: 70px;
+    background: var(--accent);
+}
+
+.program-showcase {
+    position: relative;
+    min-height: 850px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.program-showcase__background,
+.program-showcase__overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.program-showcase--basic {
+    background: var(--surface);
+}
+
+.program-showcase--basic .program-showcase__background {
+    right: 0;
+    left: 42%;
+    background: url("../../assets/images/chris-jj-golden-hour.webp") center / cover no-repeat;
+}
+
+.program-showcase--basic .program-showcase__background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--surface) 0%, rgba(18,18,18,.85) 20%, rgba(18,18,18,.15) 100%);
+}
+
+.program-showcase--advanced {
+    background: var(--background);
+}
+
+.program-showcase--advanced .program-showcase__background {
+    right: 42%;
+    left: 0;
+    background: url("../../assets/images/chris-jj-golden-hour.webp") center / cover no-repeat;
+}
+
+.program-showcase--advanced .program-showcase__overlay {
+    background: linear-gradient(90deg, rgba(8,8,8,.15) 0%, rgba(8,8,8,.85) 78%, var(--background) 100%);
+}
+
+.program-showcase__container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.program-showcase__content {
+    width: 48%;
+    max-width: 650px;
+}
+
+.program-showcase__content--right {
+    margin-left: auto;
+}
+
+.program-showcase__meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.program-showcase__meta span:first-child {
+    color: var(--accent);
+    font-size: 1.5rem;
+}
+
+.program-showcase h2 {
+    font-size: clamp(3.5rem,6vw,6.5rem);
+}
+
+.program-showcase__intro {
+    max-width: 600px;
+    margin: 1.75rem 0 0;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.program-feature-list {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: .9rem 2rem;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.program-feature-list li {
+    position: relative;
+    padding-left: 1.25rem;
+    color: var(--text-secondary);
+    font-size: .9rem;
+    line-height: 1.5;
+}
+
+.program-feature-list li::before {
+    content: "";
+    position: absolute;
+    top: .55rem;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.program-custom {
+    background: var(--surface);
+}
+
+.program-custom__grid {
+    display: grid;
+    grid-template-columns: minmax(300px,.85fr) minmax(400px,1.15fr);
+    gap: 7rem;
+    align-items: center;
+}
+
+.program-custom h2 {
+    font-size: clamp(3.5rem,6vw,6rem);
+}
+
+.program-custom__content {
+    max-width: 700px;
+}
+
+.program-custom__content > p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.85;
+}
+
+.program-custom__areas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .65rem;
+    margin: 2rem 0;
+}
+
+.program-custom__areas span {
+    padding: .65rem .9rem;
+    border: 1px solid rgba(255,255,255,.1);
+    color: var(--text-secondary);
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.programs-section-heading {
+    max-width: 800px;
+}
+
+.programs-section-heading h2 {
+    font-size: clamp(3rem,5vw,5.5rem);
+}
+
+.programs-section-heading > p:last-child {
+    max-width: 620px;
+    margin: 1.25rem 0 0;
+    color: var(--text-secondary);
+    line-height: 1.75;
+}
+
+.program-process {
+    background: var(--background);
+}
+
+.program-process__steps {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    margin-top: 5rem;
+    border-top: 1px solid rgba(255,255,255,.1);
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.program-process__step {
+    min-height: 210px;
+    padding: 2rem 1.5rem;
+    border-right: 1px solid rgba(255,255,255,.1);
+}
+
+.program-process__step:last-child {
+    border-right: 0;
+}
+
+.program-process__step span {
+    display: block;
+    margin-bottom: 4rem;
+    color: var(--accent);
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.program-process__step h3 {
+    margin: 0;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.65rem;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.program-pricing {
+    background: var(--surface);
+    text-align: center;
+}
+
+.program-pricing__container {
+    max-width: 850px;
+}
+
+.program-pricing h2 {
+    font-size: clamp(3rem,5vw,5.5rem);
+}
+
+.program-pricing__container > p:not(.programs-eyebrow) {
+    max-width: 650px;
+    margin: 1.5rem auto 2rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.program-policies {
+    background: var(--background);
+}
+
+.program-policies__grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.program-policy {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 1rem;
+    padding: 2rem 3rem 2rem 0;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.program-policy:nth-child(odd) {
+    border-right: 1px solid rgba(255,255,255,.1);
+}
+
+.program-policy:nth-child(even) {
+    padding-left: 3rem;
+}
+
+.program-policy span {
+    color: var(--accent);
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.program-policy p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: .9rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+    .program-showcase {
+        min-height: 780px;
+    }
+
+    .program-showcase--basic .program-showcase__background,
+    .program-showcase--advanced .program-showcase__background {
+        inset: 0;
+    }
+
+    .program-showcase--basic .program-showcase__background::after {
+        background: linear-gradient(90deg, rgba(18,18,18,.96) 0%, rgba(18,18,18,.82) 55%, rgba(18,18,18,.5) 100%);
+    }
+
+    .program-showcase--advanced .program-showcase__overlay {
+        background: linear-gradient(90deg, rgba(8,8,8,.65) 0%, rgba(8,8,8,.9) 70%, rgba(8,8,8,.98) 100%);
+    }
+
+    .program-showcase__content,
+    .program-showcase__content--right {
+        width: 75%;
+        margin: 0;
+    }
+
+    .program-custom__grid {
+        gap: 4rem;
+    }
+
+    .program-process__steps {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .program-process__step:nth-child(3) {
+        border-right: 0;
+    }
+
+    .program-process__step:nth-child(-n+3) {
+        border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+}
+
+@media (max-width: 700px) {
+    .programs-hero {
+        min-height: 720px;
+    }
+
+    .programs-hero__overlay {
+        background: linear-gradient(180deg, rgba(8,8,8,.55) 0%, rgba(8,8,8,.9) 75%);
+    }
+
+    .programs-hero__content {
+        padding-top: 5rem;
+    }
+
+    .programs-hero__scroll {
+        display: none;
+    }
+
+    .program-showcase {
+        min-height: auto;
+    }
+
+    .program-showcase__content,
+    .program-showcase__content--right {
+        width: 100%;
+        padding: 6rem 0;
+    }
+
+    .program-feature-list {
+        grid-template-columns: 1fr;
+    }
+
+    .program-custom__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .program-process__steps {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .program-process__step:nth-child(3) {
+        border-right: 1px solid rgba(255,255,255,.1);
+    }
+
+    .program-process__step:nth-child(2n) {
+        border-right: 0;
+    }
+
+    .program-process__step:nth-child(-n+4) {
+        border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+
+    .program-policies__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .program-policy,
+    .program-policy:nth-child(even) {
+        padding: 1.75rem 0;
+        border-right: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .programs-hero h1 {
+        font-size: clamp(3.5rem,16vw,5rem);
+    }
+
+    .program-showcase h2,
+    .program-custom h2,
+    .programs-section-heading h2,
+    .program-pricing h2 {
+        font-size: clamp(3rem,14vw,4.5rem);
+    }
+
+    .program-process__steps {
+        grid-template-columns: 1fr;
+    }
+
+    .program-process__step,
+    .program-process__step:nth-child(2n),
+    .program-process__step:nth-child(3) {
+        min-height: auto;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+
+    .program-process__step:last-child {
+        border-bottom: 0;
+    }
+}
