@@ -23,7 +23,7 @@
 }
 
 .about-hero__image {
-    background: url("../../assets/images/chris-jj-golden-hour.webp") center center / cover no-repeat;
+    background: url("../../assets/images/protection-training.jpg") center center / cover no-repeat;
     filter: blur(8px);
     transform: scale(1.08);
     will-change: transform;
@@ -32,7 +32,7 @@
 .about-hero__focus {
     inset: 7% 9%;
     border-radius: 50%;
-    background: url("../../assets/images/chris-jj-golden-hour.webp") center center / cover no-repeat;
+    background: url("../../assets/images/protection-training.jpg") center center / cover no-repeat;
     box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 25px 80px rgba(0,0,0,.35);
     transform: translate3d(0,var(--about-parallax,0px),0);
     will-change: transform;
@@ -202,7 +202,7 @@
 .about-chris__image {
     position: absolute;
     inset: 0 8% 8% 0;
-    background: url("../../assets/images/chris-jj-golden-hour.webp") center / cover no-repeat;
+    background: url("../../assets/images/certifications.webp") center / cover no-repeat;
 }
 
 .about-chris__accent {
