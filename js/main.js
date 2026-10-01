@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     initializeNavigation();
     initializeCurrentYear();
     initializeHeaderScroll();
+    initializeFaqs();
 
 });
 
@@ -205,5 +206,50 @@ function initializeHeaderScroll() {
         updateHeader,
         { passive: true }
     );
+
+}
+
+/* ---------------------------------------------------------
+   6. FAQ Accordion
+   --------------------------------------------------------- */
+
+function initializeFaqs() {
+
+    const faqItems =
+        document.querySelectorAll(".faq-item");
+
+    if (!faqItems.length) {
+        return;
+    }
+
+    faqItems.forEach((item) => {
+
+        const trigger =
+            item.querySelector(".faq-question");
+
+        if (!trigger) {
+            return;
+        }
+
+        trigger.addEventListener("click", () => {
+
+            const isActive =
+                item.classList.contains("active");
+
+            faqItems.forEach((faq) => {
+
+                faq.classList.remove("active");
+
+            });
+
+            if (!isActive) {
+
+                item.classList.add("active");
+
+            }
+
+        });
+
+    });
 
 }
