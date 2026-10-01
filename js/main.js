@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     initializeCurrentYear();
     initializeHeaderScroll();
     initializeFaqs();
+    initializeAboutParallax();
 
 });
 
@@ -251,5 +252,74 @@ function initializeFaqs() {
         });
 
     });
+
+}
+
+/* ---------------------------------------------------------
+   7. About Hero Parallax
+   --------------------------------------------------------- */
+
+function initializeAboutParallax() {
+
+    const hero =
+        document.querySelector(".about-hero");
+
+    const focus =
+        document.querySelector(".about-hero__focus");
+
+    const image =
+        document.querySelector(".about-hero__image");
+
+    if (!hero || !focus || !image) {
+        return;
+    }
+
+    const updateParallax = () => {
+
+        const rect =
+            hero.getBoundingClientRect();
+
+        const viewportHeight =
+            window.innerHeight;
+
+        if (
+            rect.bottom < 0 ||
+            rect.top > viewportHeight
+        ) {
+            return;
+        }
+
+        const progress =
+            (viewportHeight - rect.top) /
+            (viewportHeight + rect.height);
+
+        const offset =
+            (progress - .5) * -36;
+
+        const imageOffset =
+            offset * .45;
+
+        focus.style.setProperty(
+            "--about-parallax",
+            `${offset}px`
+        );
+
+        image.style.transform =
+            `scale(1.08) translate3d(0, ${imageOffset}px, 0)`;
+
+    };
+
+    updateParallax();
+
+    window.addEventListener(
+        "scroll",
+        updateParallax,
+        { passive: true }
+    );
+
+    window.addEventListener(
+        "resize",
+        updateParallax
+    );
 
 }
