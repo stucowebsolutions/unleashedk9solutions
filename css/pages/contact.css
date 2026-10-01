@@ -10,7 +10,7 @@
 .contact-hero-blur {
     position: absolute;
     inset: -5%;
-    background: url("../../assets/images/chris-jj-golden-hour.webp") center/cover no-repeat;
+    background: url("../../assets/images/chris-jj-2.webp") center/cover no-repeat;
 }
 .contact-hero-image {
     filter: blur(14px);
@@ -40,7 +40,7 @@
     border-radius: inherit;
 }
 .contact-focus-image {
-    background: url("../../assets/images/chris-jj-golden-hour.webp") center/cover no-repeat;
+    background: url("../../assets/images/chris-jj-2.webp") center/cover no-repeat;
     z-index: -2;
 }
 .contact-focus-overlay {
