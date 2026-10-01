@@ -1,325 +1,184 @@
-/* =========================================================
-   UNLEASHED K9 SOLUTIONS
-   GLOBAL JAVASCRIPT
-   ========================================================= */
-
 document.addEventListener("DOMContentLoaded", async () => {
-
     await initializeComponents();
-
     initializeNavigation();
     initializeCurrentYear();
     initializeHeaderScroll();
-    initializeFaqs();
-    initializeAboutParallax();
-
+    initializeFAQ();
+    initializeContactCard();
+    initializeFormFields();
+    initializeConsultationForm();
 });
 
-
-/* ---------------------------------------------------------
-   1. Component Loader
-   --------------------------------------------------------- */
-
 async function loadComponent(elementId, filePath) {
-
     const target = document.getElementById(elementId);
-
-    if (!target) {
-        return;
-    }
-
+    if (!target) return;
     try {
-
         const response = await fetch(filePath);
-
-        if (!response.ok) {
-            throw new Error(
-                `Failed to load component: ${filePath}`
-            );
-        }
-
+        if (!response.ok) throw new Error(`Failed to load component: ${filePath}`);
         target.innerHTML = await response.text();
-
     } catch (error) {
-
         console.error(error);
-
     }
-
 }
-
-
-/* ---------------------------------------------------------
-   2. Load Global Components
-   --------------------------------------------------------- */
 
 async function initializeComponents() {
-
     await Promise.all([
-        loadComponent(
-            "header-root",
-            "./partials/header.html"
-        ),
-
-        loadComponent(
-            "footer-root",
-            "./partials/footer.html"
-        )
+        loadComponent("header-root", "./partials/header.html"),
+        loadComponent("footer-root", "./partials/footer.html")
     ]);
-
 }
-
-
-/* ---------------------------------------------------------
-   3. Mobile Navigation
-   --------------------------------------------------------- */
 
 function initializeNavigation() {
-
-    const menuToggle = document.querySelector(
-        ".mobile-menu-toggle"
-    );
-
-    const navigation = document.querySelector(
-        ".site-navigation"
-    );
-
-    if (!menuToggle || !navigation) {
-        return;
-    }
-
+    const menuToggle = document.querySelector(".mobile-menu-toggle");
+    const navigation = document.querySelector(".site-navigation");
+    if (!menuToggle || !navigation) return;
     menuToggle.addEventListener("click", () => {
-
-        const isOpen =
-            menuToggle.getAttribute("aria-expanded") === "true";
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            String(!isOpen)
-        );
-
-        menuToggle.classList.toggle(
-            "is-active",
-            !isOpen
-        );
-
-        navigation.classList.toggle(
-            "is-open",
-            !isOpen
-        );
-
+        const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!isOpen));
+        menuToggle.classList.toggle("is-active", !isOpen);
+        navigation.classList.toggle("is-open", !isOpen);
     });
-
-
-    navigation
-        .querySelectorAll("a")
-        .forEach((link) => {
-
-            link.addEventListener("click", () => {
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                menuToggle.classList.remove(
-                    "is-active"
-                );
-
-                navigation.classList.remove(
-                    "is-open"
-                );
-
-            });
-
+    navigation.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.classList.remove("is-active");
+            navigation.classList.remove("is-open");
         });
-
-
-    document.addEventListener("keydown", (event) => {
-
-        if (event.key !== "Escape") {
-            return;
-        }
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-        menuToggle.classList.remove(
-            "is-active"
-        );
-
-        navigation.classList.remove(
-            "is-open"
-        );
-
     });
-
+    document.addEventListener("keydown", event => {
+        if (event.key !== "Escape") return;
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.classList.remove("is-active");
+        navigation.classList.remove("is-open");
+    });
 }
-
-
-/* ---------------------------------------------------------
-   4. Current Year
-   --------------------------------------------------------- */
 
 function initializeCurrentYear() {
-
-    const yearElement =
-        document.getElementById("current-year");
-
-    if (!yearElement) {
-        return;
-    }
-
-    yearElement.textContent =
-        new Date().getFullYear();
-
+    const yearElement = document.getElementById("current-year");
+    if (!yearElement) return;
+    yearElement.textContent = new Date().getFullYear();
 }
-
-
-/* ---------------------------------------------------------
-   5. Header Scroll State
-   --------------------------------------------------------- */
 
 function initializeHeaderScroll() {
-
-    const header =
-        document.querySelector(".site-header");
-
-    if (!header) {
-        return;
-    }
-
+    const header = document.querySelector(".site-header");
+    if (!header) return;
     const updateHeader = () => {
-
-        header.classList.toggle(
-            "is-scrolled",
-            window.scrollY > 20
-        );
-
+        header.classList.toggle("is-scrolled", window.scrollY > 20);
     };
-
     updateHeader();
-
-    window.addEventListener(
-        "scroll",
-        updateHeader,
-        { passive: true }
-    );
-
+    window.addEventListener("scroll", updateHeader, { passive: true });
 }
 
-/* ---------------------------------------------------------
-   6. FAQ Accordion
-   --------------------------------------------------------- */
-
-function initializeFaqs() {
-
-    const faqItems =
-        document.querySelectorAll(".faq-item");
-
-    if (!faqItems.length) {
-        return;
-    }
-
-    faqItems.forEach((item) => {
-
-        const trigger =
-            item.querySelector(".faq-question");
-
-        if (!trigger) {
-            return;
-        }
-
-        trigger.addEventListener("click", () => {
-
-            const isActive =
-                item.classList.contains("active");
-
-            faqItems.forEach((faq) => {
-
-                faq.classList.remove("active");
-
-            });
-
-            if (!isActive) {
-
-                item.classList.add("active");
-
-            }
-
+function initializeFAQ() {
+    const faqItems = document.querySelectorAll(".faq-item");
+    if (!faqItems.length) return;
+    faqItems.forEach(item => {
+        const button = item.querySelector(".faq-question");
+        if (!button) return;
+        button.addEventListener("click", () => {
+            const isOpen = item.classList.contains("is-open");
+            faqItems.forEach(otherItem => otherItem.classList.remove("is-open"));
+            if (!isOpen) item.classList.add("is-open");
         });
-
     });
-
 }
 
-/* ---------------------------------------------------------
-   7. About Hero Parallax
-   --------------------------------------------------------- */
+function initializeContactCard() {
+    const card = document.getElementById("contact-card");
+    const triggers = document.querySelectorAll("[data-contact-flip]");
+    if (!card || !triggers.length) return;
+    triggers.forEach(trigger => {
+        trigger.addEventListener("click", () => {
+            card.classList.toggle("is-flipped");
+        });
+    });
+}
 
-function initializeAboutParallax() {
+function initializeFormFields() {
+    const fields = document.querySelectorAll(".form-field");
+    if (!fields.length) return;
+    fields.forEach(field => {
+        const input = field.querySelector("input, textarea, select");
+        const placeholder = field.querySelector(".field-placeholder");
+        if (!input || !placeholder) return;
+        const text = placeholder.textContent.trim();
+        placeholder.textContent = "";
+        [...text].forEach((character, index) => {
+            const span = document.createElement("span");
+            span.textContent = character === " " ? "\u00A0" : character;
+            span.style.setProperty("--letter-index", index);
+            placeholder.appendChild(span);
+        });
+        const updateState = () => {
+            field.classList.toggle("has-value", input.value !== "");
+            field.classList.toggle("is-active", document.activeElement === input);
+        };
+        input.addEventListener("focus", updateState);
+        input.addEventListener("blur", updateState);
+        input.addEventListener("input", updateState);
+        input.addEventListener("change", updateState);
+        updateState();
+    });
+}
 
-    const hero =
-        document.querySelector(".about-hero");
-
-    const focus =
-        document.querySelector(".about-hero__focus");
-
-    const image =
-        document.querySelector(".about-hero__image");
-
-    if (!hero || !focus || !image) {
-        return;
-    }
-
-    const updateParallax = () => {
-
-        const rect =
-            hero.getBoundingClientRect();
-
-        const viewportHeight =
-            window.innerHeight;
-
-        if (
-            rect.bottom < 0 ||
-            rect.top > viewportHeight
-        ) {
-            return;
-        }
-
-        const progress =
-            (viewportHeight - rect.top) /
-            (viewportHeight + rect.height);
-
-        const offset =
-            (progress - .5) * -36;
-
-        const imageOffset =
-            offset * .45;
-
-        focus.style.setProperty(
-            "--about-parallax",
-            `${offset}px`
-        );
-
-        image.style.transform =
-            `scale(1.08) translate3d(0, ${imageOffset}px, 0)`;
-
+function initializeConsultationForm() {
+    const form = document.getElementById("consultation-form");
+    if (!form) return;
+    const pages = [...form.querySelectorAll("[data-consultation-page]")];
+    const progressSteps = [...form.querySelectorAll("[data-progress-step]")];
+    const progress = document.getElementById("consultation-progress");
+    const currentPage = document.getElementById("consultation-current");
+    const backButton = document.getElementById("consultation-back");
+    const nextButton = document.getElementById("consultation-next");
+    const submitButton = document.getElementById("consultation-submit");
+    const status = document.getElementById("consultation-status");
+    if (!pages.length || !backButton || !nextButton || !submitButton) return;
+    let page = 1;
+    const updateForm = () => {
+        pages.forEach((item, index) => {
+            item.classList.toggle("is-active", index + 1 === page);
+        });
+        progressSteps.forEach((step, index) => {
+            step.classList.toggle("is-active", index + 1 === page);
+            step.classList.toggle("is-complete", index + 1 < page);
+        });
+        if (progress) progress.style.width = `${((page - 1) / (pages.length - 1)) * 100}%`;
+        if (currentPage) currentPage.textContent = String(page).padStart(2, "0");
+        backButton.disabled = page === 1;
+        nextButton.style.display = page === pages.length ? "none" : "block";
+        submitButton.style.display = page === pages.length ? "block" : "none";
+        status.textContent = "";
     };
-
-    updateParallax();
-
-    window.addEventListener(
-        "scroll",
-        updateParallax,
-        { passive: true }
-    );
-
-    window.addEventListener(
-        "resize",
-        updateParallax
-    );
-
+    const validatePage = () => {
+        const activePage = pages[page - 1];
+        const requiredFields = activePage.querySelectorAll("input[required], textarea[required], select[required]");
+        for (const field of requiredFields) {
+            if (!field.checkValidity()) {
+                field.reportValidity();
+                return false;
+            }
+        }
+        return true;
+    };
+    nextButton.addEventListener("click", () => {
+        if (!validatePage()) return;
+        if (page < pages.length) {
+            page++;
+            updateForm();
+        }
+    });
+    backButton.addEventListener("click", () => {
+        if (page > 1) {
+            page--;
+            updateForm();
+        }
+    });
+    form.addEventListener("submit", event => {
+        event.preventDefault();
+        if (!validatePage()) return;
+        const honeypot = form.querySelector('input[name="company"]');
+        if (honeypot && honeypot.value !== "") return;
+        status.textContent = "Your consultation request is ready to be submitted once a form endpoint is connected.";
+    });
+    updateForm();
 }
