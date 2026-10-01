@@ -1,1 +1,221 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Unleashed K9 Solutions in Valdosta, Georgia to ask questions or schedule a personalized dog training consultation.">
+    <meta name="keywords" content="dog training contact Valdosta GA, dog trainer Valdosta Georgia, dog training consultation South Georgia, Unleashed K9 Solutions">
+    <meta name="author" content="Unleashed K9 Solutions">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://unleashedk9solutions.com/contact.html">
+    <meta property="og:title" content="Contact | Unleashed K9 Solutions">
+    <meta property="og:description" content="Contact Unleashed K9 Solutions to ask questions or schedule a personalized dog training consultation in Valdosta and South Georgia.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unleashedk9solutions.com/contact.html">
+    <meta property="og:image" content="https://unleashedk9solutions.com/assets/images/chris-jj-golden-hour.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact | Unleashed K9 Solutions">
+    <meta name="twitter:description" content="Ask a question or start your personalized dog training consultation with Unleashed K9 Solutions.">
+    <meta name="twitter:image" content="https://unleashedk9solutions.com/assets/images/chris-jj-golden-hour.webp">
+    <link rel="icon" href="./assets/icons/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <base href="https://stucowebsolutions.github.io/unleashedk9solutions/">
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/contact.css">
+    <title>Contact | Unleashed K9 Solutions</title>
+</head>
+<body>
+    <div id="header-root"></div>
+    <main>
+        <section class="contact-hero">
+            <div class="contact-hero-image"></div>
+            <div class="contact-hero-overlay"></div>
+            <div class="contact-focus">
+                <div class="contact-card" id="contact-card">
+                    <div class="contact-card-face contact-card-front">
+                        <span class="section-eyebrow">GET IN TOUCH</span>
+                        <h1>LET'S TALK<br><span>ABOUT YOUR DOG.</span></h1>
+                        <p>Have a question about training, programs or whether Unleashed K9 Solutions is the right fit? Get in touch directly.</p>
+                        <div class="contact-details">
+                            <a href="tel:2292004090" class="contact-detail">
+                                <span class="contact-detail-label">CALL</span>
+                                <span>229-200-4090</span>
+                            </a>
+                            <a href="https://www.instagram.com/unleashed_k9_solutions" class="contact-detail" target="_blank" rel="noopener">
+                                <span class="contact-detail-label">INSTAGRAM</span>
+                                <span>@unleashed_k9_solutions</span>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61580008453566" class="contact-detail" target="_blank" rel="noopener">
+                                <span class="contact-detail-label">FACEBOOK</span>
+                                <span>Unleashed K9 Solutions</span>
+                            </a>
+                        </div>
+                        <button type="button" class="contact-flip-button" data-contact-flip>
+                            ASK A QUESTION
+                            <span>+</span>
+                        </button>
+                    </div>
+                    <div class="contact-card-face contact-card-back">
+                        <span class="section-eyebrow">HAVE A QUESTION?</span>
+                        <h2>SEND US A MESSAGE.</h2>
+                        <form class="contact-question-form" id="question-form">
+                            <div class="form-field">
+                                <input type="text" id="question-name" name="name" autocomplete="name" required aria-label="Your name">
+                                <span class="field-placeholder" aria-hidden="true">Your Name</span>
+                            </div>
+                            <div class="form-field">
+                                <input type="email" id="question-email" name="email" autocomplete="email" required aria-label="Email address">
+                                <span class="field-placeholder" aria-hidden="true">Email Address</span>
+                            </div>
+                            <div class="form-field">
+                                <input type="tel" id="question-phone" name="phone" autocomplete="tel" aria-label="Phone number">
+                                <span class="field-placeholder" aria-hidden="true">Phone Number</span>
+                            </div>
+                            <div class="form-field form-field-message">
+                                <textarea id="question-message" name="message" rows="4" required aria-label="Your question"></textarea>
+                                <span class="field-placeholder" aria-hidden="true">How Can We Help?</span>
+                            </div>
+                            <div class="honeypot" aria-hidden="true">
+                                <label for="question-company">Company</label>
+                                <input type="text" id="question-company" name="company" tabindex="-1" autocomplete="off">
+                            </div>
+                            <div class="contact-form-actions">
+                                <button type="button" class="contact-back-button" data-contact-flip>BACK</button>
+                                <button type="submit" class="contact-submit-button">SEND QUESTION</button>
+                            </div>
+                            <p class="form-status" id="question-status" role="status"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="consultation-section" id="consultation">
+            <div class="consultation-intro">
+                <span class="section-eyebrow">START HERE</span>
+                <h2>READY FOR YOUR<br><span>CONSULTATION?</span></h2>
+                <p>Tell us a little about you, your dog and what you're looking to accomplish. This information helps us understand your situation before we discuss the right training approach.</p>
+            </div>
+            <div class="consultation-form-shell">
+                <div class="consultation-progress">
+                    <div class="progress-line"><span id="consultation-progress"></span></div>
+                    <div class="progress-step is-active" data-progress-step="1"><span>01</span><strong>YOU</strong></div>
+                    <div class="progress-step" data-progress-step="2"><span>02</span><strong>YOUR DOG</strong></div>
+                    <div class="progress-step" data-progress-step="3"><span>03</span><strong>YOUR GOALS</strong></div>
+                </div>
+                <form class="consultation-form" id="consultation-form">
+                    <div class="consultation-page is-active" data-consultation-page="1">
+                        <div class="consultation-page-heading">
+                            <span>STEP 01</span>
+                            <h3>LET'S START WITH YOU.</h3>
+                            <p>How should we get in touch with you?</p>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <input type="text" id="consult-name" name="name" autocomplete="name" required aria-label="Your name">
+                                <span class="field-placeholder" aria-hidden="true">Your Name</span>
+                            </div>
+                            <div class="form-field">
+                                <input type="email" id="consult-email" name="email" autocomplete="email" required aria-label="Email address">
+                                <span class="field-placeholder" aria-hidden="true">Email Address</span>
+                            </div>
+                            <div class="form-field">
+                                <input type="tel" id="consult-phone" name="phone" autocomplete="tel" required aria-label="Phone number">
+                                <span class="field-placeholder" aria-hidden="true">Phone Number</span>
+                            </div>
+                            <div class="form-field">
+                                <input type="text" id="consult-location" name="location" autocomplete="address-level2" aria-label="City or area">
+                                <span class="field-placeholder" aria-hidden="true">City / Area</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="consultation-page" data-consultation-page="2">
+                        <div class="consultation-page-heading">
+                            <span>STEP 02</span>
+                            <h3>TELL US ABOUT YOUR DOG.</h3>
+                            <p>A few details help us understand where you're starting from.</p>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <input type="text" id="dog-name" name="dog_name" required aria-label="Dog's name">
+                                <span class="field-placeholder" aria-hidden="true">Dog's Name</span>
+                            </div>
+                            <div class="form-field">
+                                <input type="text" id="dog-breed" name="dog_breed" required aria-label="Dog's breed">
+                                <span class="field-placeholder" aria-hidden="true">Breed / Mix</span>
+                            </div>
+                            <div class="form-field">
+                                <input type="number" id="dog-age" name="dog_age" min="0" max="30" step="0.1" aria-label="Dog's age">
+                                <span class="field-placeholder" aria-hidden="true">Age</span>
+                            </div>
+                            <div class="form-field">
+                                <select id="dog-sex" name="dog_sex" aria-label="Dog's sex">
+                                    <option value="" selected disabled></option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                                <span class="field-placeholder" aria-hidden="true">Sex</span>
+                            </div>
+                            <div class="form-field form-field-full">
+                                <textarea id="dog-background" name="dog_background" rows="5" aria-label="Tell us about your dog"></textarea>
+                                <span class="field-placeholder" aria-hidden="true">Tell Us About Your Dog</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="consultation-page" data-consultation-page="3">
+                        <div class="consultation-page-heading">
+                            <span>STEP 03</span>
+                            <h3>WHAT ARE YOU LOOKING TO ACCOMPLISH?</h3>
+                            <p>Give us some context around your training goals and we'll take it from there.</p>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-field form-field-full">
+                                <select id="consult-program" name="program" required aria-label="Training program of interest">
+                                    <option value="" selected disabled></option>
+                                    <option value="basic-obedience">Basic Obedience</option>
+                                    <option value="advanced-obedience">Advanced Obedience</option>
+                                    <option value="custom-extended">Custom / Extended Training</option>
+                                    <option value="behavior-modification">Behavior Modification</option>
+                                    <option value="off-leash">Off-Leash Training</option>
+                                    <option value="protection">Protection Training</option>
+                                    <option value="not-sure">Not Sure</option>
+                                </select>
+                                <span class="field-placeholder" aria-hidden="true">Training Program / Goal</span>
+                            </div>
+                            <div class="form-field form-field-full">
+                                <textarea id="consult-goals" name="goals" rows="6" required aria-label="Training goals"></textarea>
+                                <span class="field-placeholder" aria-hidden="true">What Would You Like To Improve?</span>
+                            </div>
+                            <div class="form-field form-field-full">
+                                <select id="consult-contact-preference" name="contact_preference" aria-label="Preferred contact method">
+                                    <option value="" selected disabled></option>
+                                    <option value="phone">Phone</option>
+                                    <option value="text">Text</option>
+                                    <option value="email">Email</option>
+                                </select>
+                                <span class="field-placeholder" aria-hidden="true">Preferred Contact Method</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="honeypot" aria-hidden="true">
+                        <label for="consult-company">Company</label>
+                        <input type="text" id="consult-company" name="company" tabindex="-1" autocomplete="off">
+                    </div>
+                    <div class="consultation-navigation">
+                        <button type="button" class="consultation-back" id="consultation-back">BACK</button>
+                        <div class="consultation-page-count"><span id="consultation-current">01</span> / 03</div>
+                        <button type="button" class="consultation-next" id="consultation-next">NEXT <span>→</span></button>
+                        <button type="submit" class="consultation-submit" id="consultation-submit">REQUEST CONSULTATION <span>→</span></button>
+                    </div>
+                    <p class="form-status" id="consultation-status" role="status"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+    <div id="footer-root"></div>
+    <script src="js/main.js"></script>
+</body>
+</html>
