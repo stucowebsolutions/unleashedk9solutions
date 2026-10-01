@@ -8,35 +8,35 @@
 }
 .contact-hero-image {
     position: absolute;
-    inset: 0;
+    inset: -3%;
     background: url("../../assets/images/chris-jj-golden-hour.webp") center/cover no-repeat;
+    filter: blur(1px);
     transform: scale(1.04);
 }
 .contact-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(0,0,0,.7), rgba(0,0,0,.3), rgba(0,0,0,.7));
+    background: linear-gradient(90deg, rgba(0,0,0,.72), rgba(0,0,0,.25), rgba(0,0,0,.72));
 }
 .contact-focus {
     position: relative;
     z-index: 2;
-    width: min(92vw, 680px);
+    width: min(82vw, 760px);
     aspect-ratio: 1;
-    border-radius: 50%;
     display: grid;
     place-items: center;
-    overflow: hidden;
-    background: rgba(12,12,12,.38);
-    border: 1px solid rgba(255,255,255,.18);
-    box-shadow: 0 30px 100px rgba(0,0,0,.4);
-    backdrop-filter: blur(8px);
+    border-radius: 50%;
+    background: rgba(255,255,255,.035);
+    border: 1px solid rgba(255,255,255,.16);
+    box-shadow: 0 30px 100px rgba(0,0,0,.45);
+    backdrop-filter: blur(12px);
 }
 .contact-card {
     position: relative;
-    width: 78%;
-    height: 78%;
+    width: min(72%, 500px);
+    aspect-ratio: 4 / 5;
     transform-style: preserve-3d;
-    transition: transform .8s cubic-bezier(.2,.75,.2,1);
+    transition: transform .85s cubic-bezier(.2,.75,.2,1);
 }
 .contact-card.is-flipped {
     transform: rotateY(180deg);
@@ -45,94 +45,145 @@
     position: absolute;
     inset: 0;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 24px;
+    background: rgba(12,12,12,.98);
+    box-shadow: 0 25px 70px rgba(0,0,0,.4);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
+.contact-card-front {
+    z-index: 2;
+}
 .contact-card-back {
+    z-index: 1;
     transform: rotateY(180deg);
 }
+.contact-card-content {
+    width: 82%;
+    max-height: 88%;
+    overflow-y: auto;
+    text-align: center;
+}
+.contact-card-content::-webkit-scrollbar {
+    width: 3px;
+}
+.contact-card-content::-webkit-scrollbar-thumb {
+    background: var(--accent);
+}
 .section-eyebrow {
-    margin-bottom: .8rem;
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: .8rem;
-    font-weight: 700;
-    letter-spacing: .18em;
+    display: block;
+    margin-bottom: .7rem;
     color: var(--accent);
+    font: 700 .7rem "Barlow Condensed", sans-serif;
+    letter-spacing: .18em;
 }
 .contact-card h1,
 .contact-card h2 {
     margin: 0;
-    font-family: "Barlow Condensed", sans-serif;
-    font-weight: 700;
-    line-height: .9;
+    font: 700 clamp(2.6rem, 5vw, 4.4rem)/.88 "Barlow Condensed", sans-serif;
     letter-spacing: -.02em;
 }
-.contact-card h1 {
-    font-size: clamp(2.7rem, 6vw, 4.8rem);
-}
-.contact-card h1 span {
+.contact-card h1 span,
+.contact-card h2 span {
     color: var(--accent);
 }
-.contact-card h2 {
-    font-size: clamp(2.2rem, 5vw, 3.8rem);
-}
-.contact-card p {
-    max-width: 470px;
-    margin: 1.3rem 0 1.6rem;
+.contact-intro {
+    max-width: 390px;
+    margin: 1rem auto 1.2rem;
     color: var(--text-secondary);
-    line-height: 1.7;
-    font-size: .92rem;
+    font-size: .78rem;
+    line-height: 1.6;
 }
 .contact-details {
     display: grid;
-    gap: .7rem;
+    gap: .5rem;
+    text-align: left;
 }
 .contact-detail {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     gap: 1rem;
-    padding-bottom: .55rem;
-    border-bottom: 1px solid rgba(255,255,255,.1);
+    padding-bottom: .45rem;
+    border-bottom: 1px solid rgba(255,255,255,.08);
     color: var(--text);
-    font-size: .86rem;
+    font-size: .7rem;
+}
+a.contact-detail {
+    transition: color .2s ease;
+}
+a.contact-detail:hover {
+    color: var(--accent);
 }
 .contact-detail-label {
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: .7rem;
-    font-weight: 700;
-    letter-spacing: .15em;
+    flex-shrink: 0;
     color: var(--text-secondary);
-}
-.contact-flip-button,
-.contact-submit-button,
-.consultation-next,
-.consultation-submit {
-    border: 0;
-    cursor: pointer;
-    font-family: "Barlow Condensed", sans-serif;
-    font-weight: 700;
+    font: 700 .58rem "Barlow Condensed", sans-serif;
     letter-spacing: .12em;
 }
+.contact-model {
+    margin: .9rem 0 .65rem;
+    text-align: center;
+}
+.contact-model span,
+.contact-model strong {
+    display: block;
+}
+.contact-model span {
+    margin-bottom: .2rem;
+    color: var(--accent);
+    font: 700 .55rem "Barlow Condensed", sans-serif;
+    letter-spacing: .14em;
+}
+.contact-model strong {
+    color: var(--text-secondary);
+    font: 600 .62rem "Barlow Condensed", sans-serif;
+    letter-spacing: .08em;
+}
+.contact-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: .8rem;
+}
+.contact-socials a {
+    color: var(--text-secondary);
+    font: 700 .58rem "Barlow Condensed", sans-serif;
+    letter-spacing: .12em;
+    transition: color .2s ease;
+}
+.contact-socials a:hover {
+    color: var(--accent);
+}
 .contact-flip-button {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    margin-top: 1.5rem;
-    padding: .95rem 1rem;
+    padding: .8rem 1rem;
+    border: 0;
     background: var(--accent);
     color: #fff;
+    cursor: pointer;
+    font: 700 .68rem "Barlow Condensed", sans-serif;
+    letter-spacing: .14em;
 }
-.contact-flip-button span {
-    font-size: 1.3rem;
+.contact-flip-icon {
+    font-size: 1.15rem;
     line-height: 1;
 }
 .contact-question-form {
     display: grid;
-    gap: .75rem;
+    gap: .65rem;
+    text-align: left;
+}
+.contact-card-back h2 {
+    margin-bottom: 1.1rem;
+    text-align: center;
 }
 .form-field {
     position: relative;
@@ -141,42 +192,41 @@
 .form-field textarea,
 .form-field select {
     width: 100%;
-    border: 1px solid rgba(255,255,255,.17);
+    border: 1px solid rgba(255,255,255,.15);
     border-radius: 0;
     outline: none;
     background: rgba(255,255,255,.035);
     color: var(--text);
-    font: 400 .86rem/1.5 "Inter", sans-serif;
+    font: 400 .76rem/1.5 "Inter", sans-serif;
     transition: border-color .25s ease, background .25s ease;
 }
 .form-field input,
 .form-field select {
-    height: 48px;
-    padding: 1.25rem .85rem .35rem;
+    height: 44px;
+    padding: 1.05rem .75rem .25rem;
 }
 .form-field textarea {
-    min-height: 105px;
+    min-height: 85px;
+    padding: 1.3rem .75rem .4rem;
     resize: vertical;
-    padding: 1.45rem .85rem .5rem;
 }
 .form-field input:focus,
 .form-field textarea:focus,
 .form-field select:focus {
     border-color: var(--accent);
-    background: rgba(255,255,255,.06);
+    background: rgba(255,255,255,.055);
 }
 .field-placeholder {
     position: absolute;
-    left: .85rem;
+    left: .75rem;
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
-    font: 500 .78rem "Inter", sans-serif;
     color: var(--text-secondary);
-    transition: opacity .2s ease, transform .45s cubic-bezier(.2,.8,.2,1), color .25s ease;
+    font: 500 .68rem "Inter", sans-serif;
 }
 .form-field-message .field-placeholder {
-    top: 1.35rem;
+    top: 1.2rem;
     transform: none;
 }
 .field-placeholder span {
@@ -185,21 +235,21 @@
 }
 .form-field.is-active .field-placeholder,
 .form-field.has-value .field-placeholder {
-    top: .35rem;
+    top: .25rem;
     transform: none;
     color: var(--accent);
-    font-size: .58rem;
+    font-size: .5rem;
     font-weight: 700;
     letter-spacing: .1em;
+}
+.form-field-message.is-active .field-placeholder,
+.form-field-message.has-value .field-placeholder {
+    top: .25rem;
 }
 .form-field.is-active .field-placeholder span,
 .form-field.has-value .field-placeholder span {
     animation: fieldWave .55s cubic-bezier(.2,.8,.2,1) both;
     animation-delay: calc(var(--letter-index) * .025s);
-}
-.form-field-message.is-active .field-placeholder,
-.form-field-message.has-value .field-placeholder {
-    top: .35rem;
 }
 @keyframes fieldWave {
     0% {
@@ -217,22 +267,24 @@
 }
 .contact-form-actions {
     display: flex;
-    gap: .6rem;
-    margin-top: .25rem;
+    gap: .5rem;
+    margin-top: .15rem;
+}
+.contact-back-button,
+.contact-submit-button {
+    flex: 1;
+    padding: .75rem;
+    border: 0;
+    cursor: pointer;
+    font: 700 .62rem "Barlow Condensed", sans-serif;
+    letter-spacing: .12em;
 }
 .contact-back-button {
-    flex: 0 0 auto;
-    padding: .8rem 1rem;
     border: 1px solid rgba(255,255,255,.15);
     background: transparent;
     color: var(--text-secondary);
-    cursor: pointer;
-    font: 700 .7rem "Barlow Condensed", sans-serif;
-    letter-spacing: .12em;
 }
 .contact-submit-button {
-    flex: 1;
-    padding: .8rem 1rem;
     background: var(--accent);
     color: #fff;
 }
@@ -245,10 +297,10 @@
     pointer-events: none !important;
 }
 .form-status {
-    min-height: 1.2em;
-    margin: .25rem 0 0;
-    font-size: .72rem;
+    min-height: 1.1em;
+    margin: .2rem 0 0;
     color: var(--text-secondary);
+    font-size: .65rem;
 }
 .consultation-section {
     position: relative;
@@ -321,9 +373,9 @@
     font: 600 .7rem "Barlow Condensed", sans-serif;
 }
 .progress-step strong {
+    color: var(--text-secondary);
     font: 700 .65rem "Barlow Condensed", sans-serif;
     letter-spacing: .12em;
-    color: var(--text-secondary);
 }
 .progress-step.is-active span,
 .progress-step.is-complete span {
@@ -395,14 +447,15 @@
 .consultation-submit {
     min-width: 130px;
     padding: .9rem 1.25rem;
+    border: 0;
+    cursor: pointer;
+    font: 700 .7rem "Barlow Condensed", sans-serif;
+    letter-spacing: .12em;
 }
 .consultation-back {
     border: 1px solid rgba(255,255,255,.15);
     background: transparent;
     color: var(--text-secondary);
-    cursor: pointer;
-    font: 700 .7rem "Barlow Condensed", sans-serif;
-    letter-spacing: .12em;
 }
 .consultation-back:disabled {
     opacity: .3;
@@ -423,39 +476,38 @@
 }
 .consultation-submit {
     display: none;
-    border: 0;
-    cursor: pointer;
 }
 @media (max-width: 700px) {
     .contact-hero {
-        min-height: 850px;
+        min-height: 900px;
     }
     .contact-focus {
         width: 94vw;
-        aspect-ratio: 1;
     }
     .contact-card {
-        width: 80%;
-        height: 80%;
+        width: 78%;
     }
-    .contact-card p {
-        margin: .8rem 0 1rem;
-        font-size: .75rem;
-        line-height: 1.5;
+    .contact-card-content {
+        width: 82%;
     }
-    .contact-details {
-        gap: .45rem;
+    .contact-card h1 {
+        font-size: 2.35rem;
+    }
+    .contact-intro {
+        margin: .7rem auto .9rem;
+        font-size: .68rem;
     }
     .contact-detail {
-        font-size: .7rem;
+        font-size: .62rem;
     }
     .contact-detail-label {
-        font-size: .58rem;
+        font-size: .5rem;
     }
-    .contact-flip-button {
-        margin-top: .9rem;
-        padding: .7rem .8rem;
-        font-size: .65rem;
+    .contact-model {
+        margin: .65rem 0 .5rem;
+    }
+    .contact-socials {
+        margin-bottom: .55rem;
     }
     .form-grid {
         grid-template-columns: 1fr;
@@ -468,28 +520,30 @@
     }
 }
 @media (max-width: 480px) {
+    .contact-hero {
+        min-height: 820px;
+    }
     .contact-focus {
         width: 96vw;
     }
     .contact-card {
-        width: 82%;
-        height: 82%;
+        width: 80%;
+        aspect-ratio: 4 / 5.5;
     }
     .contact-card h1 {
-        font-size: 2.25rem;
-    }
-    .contact-card h2 {
         font-size: 2rem;
     }
-    .contact-question-form {
-        gap: .45rem;
+    .contact-card-back h2 {
+        font-size: 2rem;
     }
-    .form-field input,
-    .form-field select {
-        height: 42px;
+    .contact-intro {
+        font-size: .62rem;
     }
-    .form-field textarea {
-        min-height: 75px;
+    .contact-detail {
+        font-size: .57rem;
+    }
+    .contact-detail-label {
+        font-size: .46rem;
     }
     .consultation-progress {
         margin-bottom: 2.5rem;
