@@ -33,14 +33,18 @@
     <main>
         <section class="contact-hero">
             <div class="contact-hero-image"></div>
-            <div class="contact-hero-overlay"></div>
+            <div class="contact-hero-blur"></div>
             <div class="contact-focus">
+                <div class="contact-focus-image"></div>
+                <div class="contact-focus-overlay"></div>
                 <div class="contact-card" id="contact-card">
                     <div class="contact-card-face contact-card-front">
                         <div class="contact-card-content">
-                            <span class="section-eyebrow">GET IN TOUCH</span>
-                            <h1>LET'S TALK<br><span>ABOUT YOUR DOG.</span></h1>
-                            <p class="contact-intro">Have a question about training, programs or whether Unleashed K9 Solutions is the right fit? Get in touch directly.</p>
+                            <div class="contact-card-heading">
+                                <span class="section-eyebrow">GET IN TOUCH</span>
+                                <h1>LET'S TALK<br><span>ABOUT YOUR DOG.</span></h1>
+                                <p>Have a question about training, programs or whether Unleashed K9 Solutions is the right fit? Get in touch directly.</p>
+                            </div>
                             <div class="contact-details">
                                 <div class="contact-detail">
                                     <span class="contact-detail-label">OWNER & TRAINER</span>
@@ -73,14 +77,16 @@
                             </div>
                             <button type="button" class="contact-flip-button" data-contact-flip>
                                 <span>ASK A QUESTION</span>
-                                <span class="contact-flip-icon">+</span>
+                                <strong>+</strong>
                             </button>
                         </div>
                     </div>
                     <div class="contact-card-face contact-card-back">
                         <div class="contact-card-content">
-                            <span class="section-eyebrow">HAVE A QUESTION?</span>
-                            <h2>SEND US A<br><span>MESSAGE.</span></h2>
+                            <div class="contact-card-heading">
+                                <span class="section-eyebrow">HAVE A QUESTION?</span>
+                                <h2>SEND US A<br><span>MESSAGE.</span></h2>
+                            </div>
                             <form class="contact-question-form" id="question-form">
                                 <div class="form-field">
                                     <input type="text" id="question-name" name="name" autocomplete="name" required aria-label="Your name">
