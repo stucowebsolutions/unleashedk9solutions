@@ -37,58 +37,78 @@
             <div class="contact-focus">
                 <div class="contact-card" id="contact-card">
                     <div class="contact-card-face contact-card-front">
-                        <span class="section-eyebrow">GET IN TOUCH</span>
-                        <h1>LET'S TALK<br><span>ABOUT YOUR DOG.</span></h1>
-                        <p>Have a question about training, programs or whether Unleashed K9 Solutions is the right fit? Get in touch directly.</p>
-                        <div class="contact-details">
-                            <a href="tel:2292004090" class="contact-detail">
-                                <span class="contact-detail-label">CALL</span>
-                                <span>229-200-4090</span>
-                            </a>
-                            <a href="https://www.instagram.com/unleashed_k9_solutions" class="contact-detail" target="_blank" rel="noopener">
-                                <span class="contact-detail-label">INSTAGRAM</span>
-                                <span>@unleashed_k9_solutions</span>
-                            </a>
-                            <a href="https://www.facebook.com/profile.php?id=61580008453566" class="contact-detail" target="_blank" rel="noopener">
-                                <span class="contact-detail-label">FACEBOOK</span>
-                                <span>Unleashed K9 Solutions</span>
-                            </a>
+                        <div class="contact-card-content">
+                            <span class="section-eyebrow">GET IN TOUCH</span>
+                            <h1>LET'S TALK<br><span>ABOUT YOUR DOG.</span></h1>
+                            <p class="contact-intro">Have a question about training, programs or whether Unleashed K9 Solutions is the right fit? Get in touch directly.</p>
+                            <div class="contact-details">
+                                <div class="contact-detail">
+                                    <span class="contact-detail-label">OWNER & TRAINER</span>
+                                    <span>Chris Sullivan</span>
+                                </div>
+                                <a href="tel:2292004090" class="contact-detail">
+                                    <span class="contact-detail-label">PHONE</span>
+                                    <span>229-200-4090</span>
+                                </a>
+                                <div class="contact-detail">
+                                    <span class="contact-detail-label">LOCATION</span>
+                                    <span>Valdosta, Georgia</span>
+                                </div>
+                                <div class="contact-detail">
+                                    <span class="contact-detail-label">SERVICE AREA</span>
+                                    <span>Valdosta & South Georgia</span>
+                                </div>
+                                <div class="contact-detail">
+                                    <span class="contact-detail-label">AVAILABILITY</span>
+                                    <span>By Appointment</span>
+                                </div>
+                            </div>
+                            <div class="contact-model">
+                                <span>PERSONALIZED TRAINING</span>
+                                <strong>ONE DOG. ONE TRAINER. ONE FOCUSED PLAN.</strong>
+                            </div>
+                            <div class="contact-socials">
+                                <a href="https://www.instagram.com/unleashed_k9_solutions" target="_blank" rel="noopener">INSTAGRAM</a>
+                                <a href="https://www.facebook.com/profile.php?id=61580008453566" target="_blank" rel="noopener">FACEBOOK</a>
+                            </div>
+                            <button type="button" class="contact-flip-button" data-contact-flip>
+                                <span>ASK A QUESTION</span>
+                                <span class="contact-flip-icon">+</span>
+                            </button>
                         </div>
-                        <button type="button" class="contact-flip-button" data-contact-flip>
-                            ASK A QUESTION
-                            <span>+</span>
-                        </button>
                     </div>
                     <div class="contact-card-face contact-card-back">
-                        <span class="section-eyebrow">HAVE A QUESTION?</span>
-                        <h2>SEND US A MESSAGE.</h2>
-                        <form class="contact-question-form" id="question-form">
-                            <div class="form-field">
-                                <input type="text" id="question-name" name="name" autocomplete="name" required aria-label="Your name">
-                                <span class="field-placeholder" aria-hidden="true">Your Name</span>
-                            </div>
-                            <div class="form-field">
-                                <input type="email" id="question-email" name="email" autocomplete="email" required aria-label="Email address">
-                                <span class="field-placeholder" aria-hidden="true">Email Address</span>
-                            </div>
-                            <div class="form-field">
-                                <input type="tel" id="question-phone" name="phone" autocomplete="tel" aria-label="Phone number">
-                                <span class="field-placeholder" aria-hidden="true">Phone Number</span>
-                            </div>
-                            <div class="form-field form-field-message">
-                                <textarea id="question-message" name="message" rows="4" required aria-label="Your question"></textarea>
-                                <span class="field-placeholder" aria-hidden="true">How Can We Help?</span>
-                            </div>
-                            <div class="honeypot" aria-hidden="true">
-                                <label for="question-company">Company</label>
-                                <input type="text" id="question-company" name="company" tabindex="-1" autocomplete="off">
-                            </div>
-                            <div class="contact-form-actions">
-                                <button type="button" class="contact-back-button" data-contact-flip>BACK</button>
-                                <button type="submit" class="contact-submit-button">SEND QUESTION</button>
-                            </div>
-                            <p class="form-status" id="question-status" role="status"></p>
-                        </form>
+                        <div class="contact-card-content">
+                            <span class="section-eyebrow">HAVE A QUESTION?</span>
+                            <h2>SEND US A<br><span>MESSAGE.</span></h2>
+                            <form class="contact-question-form" id="question-form">
+                                <div class="form-field">
+                                    <input type="text" id="question-name" name="name" autocomplete="name" required aria-label="Your name">
+                                    <span class="field-placeholder" aria-hidden="true">Your Name</span>
+                                </div>
+                                <div class="form-field">
+                                    <input type="email" id="question-email" name="email" autocomplete="email" required aria-label="Email address">
+                                    <span class="field-placeholder" aria-hidden="true">Email Address</span>
+                                </div>
+                                <div class="form-field">
+                                    <input type="tel" id="question-phone" name="phone" autocomplete="tel" aria-label="Phone number">
+                                    <span class="field-placeholder" aria-hidden="true">Phone Number</span>
+                                </div>
+                                <div class="form-field form-field-message">
+                                    <textarea id="question-message" name="message" rows="4" required aria-label="Your question"></textarea>
+                                    <span class="field-placeholder" aria-hidden="true">How Can We Help?</span>
+                                </div>
+                                <div class="honeypot" aria-hidden="true">
+                                    <label for="question-company">Company</label>
+                                    <input type="text" id="question-company" name="company" tabindex="-1" autocomplete="off">
+                                </div>
+                                <div class="contact-form-actions">
+                                    <button type="button" class="contact-back-button" data-contact-flip>BACK</button>
+                                    <button type="submit" class="contact-submit-button">SEND QUESTION</button>
+                                </div>
+                                <p class="form-status" id="question-status" role="status"></p>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
