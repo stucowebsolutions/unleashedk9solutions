@@ -329,8 +329,8 @@
     color: #111;
 }
 .program-container {
-    margin-inline: var(--space-6);
-    width: auto;
+    margin-inline: auto;
+    width: 75vw;
 }
 .home-programs__heading {
     margin-bottom: 20px;
@@ -427,15 +427,15 @@
     font-size: var(--font-size-xl);
     font-weight: 1000;
 }
-.home-program__content .button {
-    margin-top: auto;
+.program-container .button {
+    margin: auto;
 }
 .home-program__image {
     position: relative;
     min-width: 0;
     min-height: 420px;
-    background-position: center bottom;
-    background-size: contain;
+    background-position: right top;
+    background-size: cover;
     background-repeat: no-repeat;
     background-color: #e7e7e5;
 }
@@ -450,9 +450,6 @@
 }
 .home-program__image--advanced {
     background-image: url("../../assets/images/advanced-training.webp");
-}
-.home-program__image:hover {
-    background-size: 102%;
 }
 .home-programs__note {
     margin: 9px 0 0;
