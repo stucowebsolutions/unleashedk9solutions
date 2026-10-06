@@ -1,7 +1,8 @@
+
 .home-eyebrow {
     margin: 0 0 8px;
     color: var(--color-red-light);
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-xl);
     font-weight: 800;
     letter-spacing: .16em;
     line-height: 1;
@@ -60,7 +61,7 @@
 }
 .home-announcement__inner span {
     color: #c5c5c5;
-    font-size: .56rem;
+    font-size: var(--font-size-sm);
     font-weight: 700;
     letter-spacing: .1em;
     text-transform: uppercase;
@@ -140,7 +141,7 @@
     align-items: center;
     gap: 8px;
     color: #cfcfcf;
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
     font-weight: 700;
     letter-spacing: .04em;
     text-transform: uppercase;
@@ -168,7 +169,7 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 35%;
+    width: 60%;
     height: 5px;
     background: var(--color-red);
 }
@@ -209,7 +210,7 @@
 .home-why__badge {
     overflow: visible;
     position: absolute;
-    left: 38.5%;
+    left: 35%;
     top: 0;
     width: clamp(115px,12vw,168px);
     height: clamp(115px,12vw,168px);
@@ -268,16 +269,13 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    border-top: 1px solid var(--color-border);
-    border-left: 1px solid var(--color-border);
 }
 .home-training-card {
     flex: 0 0 calc((100% - 6px) / 7);
     min-width: 0;
-    min-height: 210px;
+    min-height: 300px;
     padding: 22px 12px 18px;
-    border-right: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
+    border: 2px solid var(--color-border);
     text-align: center;
     transition: background var(--transition-base),transform var(--transition-base);
 }
@@ -317,7 +315,7 @@
 .home-training-card p {
     margin: 0;
     color: var(--color-text-muted);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     line-height: 1.45;
 }
 .home-training__note {
