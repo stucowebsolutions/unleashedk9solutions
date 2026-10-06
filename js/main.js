@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     initializeFormFields();
     initializeConsultationForm();
 });
-
 async function loadComponent(elementId, filePath) {
     const target = document.getElementById(elementId);
     if (!target) return;
@@ -20,14 +19,12 @@ async function loadComponent(elementId, filePath) {
         console.error(error);
     }
 }
-
 async function initializeComponents() {
     await Promise.all([
         loadComponent("header-root", "./partials/header.html"),
         loadComponent("footer-root", "./partials/footer.html")
     ]);
 }
-
 function initializeNavigation() {
     const menuToggle = document.querySelector(".mobile-menu-toggle");
     const navigation = document.querySelector(".site-navigation");
@@ -52,13 +49,11 @@ function initializeNavigation() {
         navigation.classList.remove("is-open");
     });
 }
-
 function initializeCurrentYear() {
     const yearElement = document.getElementById("current-year");
     if (!yearElement) return;
     yearElement.textContent = new Date().getFullYear();
 }
-
 function initializeHeaderScroll() {
     const header = document.querySelector(".site-header");
     if (!header) return;
@@ -68,7 +63,6 @@ function initializeHeaderScroll() {
     updateHeader();
     window.addEventListener("scroll", updateHeader, { passive: true });
 }
-
 function initializeFAQ() {
     const faqItems = document.querySelectorAll(".faq-item");
     if (!faqItems.length) return;
@@ -77,19 +71,15 @@ function initializeFAQ() {
         if (!button) return;
         button.addEventListener("click", () => {
             const isOpen = item.classList.contains("active");
-        
-            faqItems.forEach(otherItem =>
-                otherItem.classList.remove("active")
-            );
-        
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove("active");
+            });
             if (!isOpen) {
                 item.classList.add("active");
             }
         });
-        });
     });
 }
-
 function initializeContactCard() {
     const card = document.getElementById("contact-card");
     const triggers = document.querySelectorAll("[data-contact-flip]");
@@ -100,7 +90,6 @@ function initializeContactCard() {
         });
     });
 }
-
 function initializeFormFields() {
     const fields = document.querySelectorAll(".form-field");
     if (!fields.length) return;
@@ -127,7 +116,6 @@ function initializeFormFields() {
         updateState();
     });
 }
-
 function initializeConsultationForm() {
     const form = document.getElementById("consultation-form");
     if (!form) return;
@@ -154,7 +142,9 @@ function initializeConsultationForm() {
         backButton.disabled = page === 1;
         nextButton.style.display = page === pages.length ? "none" : "block";
         submitButton.style.display = page === pages.length ? "block" : "none";
-        status.textContent = "";
+        if (status) {
+            status.textContent = "";
+        };
     };
     const validatePage = () => {
         const activePage = pages[page - 1];
@@ -185,7 +175,9 @@ function initializeConsultationForm() {
         if (!validatePage()) return;
         const honeypot = form.querySelector('input[name="company"]');
         if (honeypot && honeypot.value !== "") return;
-        status.textContent = "Your consultation request is ready to be submitted once a form endpoint is connected.";
+        if (status) {
+            status.textContent = "Your consultation request is ready to be submitted once a form endpoint is connected.";
+        };
     });
     updateForm();
 }
