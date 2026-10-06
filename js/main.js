@@ -76,9 +76,16 @@ function initializeFAQ() {
         const button = item.querySelector(".faq-question");
         if (!button) return;
         button.addEventListener("click", () => {
-            const isOpen = item.classList.contains("is-open");
-            faqItems.forEach(otherItem => otherItem.classList.remove("is-open"));
-            if (!isOpen) item.classList.add("is-open");
+            const isOpen = item.classList.contains("active");
+        
+            faqItems.forEach(otherItem =>
+                otherItem.classList.remove("active")
+            );
+        
+            if (!isOpen) {
+                item.classList.add("active");
+            }
+        });
         });
     });
 }
