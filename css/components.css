@@ -1,13 +1,16 @@
 /* =========================================================
-   UNLEASHED K9 SOLUTIONS
-   GLOBAL COMPONENTS
+   UNLEASHED K9 SOLUTIONS  GLOBAL COMPONENTS
    ========================================================= */
 /* ---------------------------------------------------------
    1. Site Header
    --------------------------------------------------------- */
+#header-root {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 .site-header {
     position: relative;
-    z-index: 1000;
     width: 100%;
     background: rgba(11, 11, 11, 0.96);
     border-bottom: 1px solid var(--color-border);
@@ -16,8 +19,6 @@
         box-shadow var(--transition-base);
 }
 .site-header.is-scrolled {
-    position: sticky;
-    top: 0;
     background: rgba(11, 11, 11, 0.98);
     box-shadow: var(--shadow-sm);
 }
@@ -26,8 +27,11 @@
     align-items: center;
     justify-content: space-between;
     min-height: var(--header-height);
+    transition: min-height var(--transition-base);
 }
-
+.site-header.is-scrolled .header-container {
+    min-height: 72px;
+}
 /* ---------------------------------------------------------
    2. Logo
    --------------------------------------------------------- */
@@ -37,8 +41,15 @@
     flex-shrink: 0;
     line-height: 1;
 }
-.logo-image{
-   height: 100px;
+.logo-image {
+    display: block;
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    transition: height var(--transition-base);
+}
+.site-header.is-scrolled .logo-image {
+    height: 64px;
 }
 .site-logo__primary {
     color: var(--color-white);
