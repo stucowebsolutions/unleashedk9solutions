@@ -62,7 +62,9 @@ function initializeHeaderScroll() {
         header.classList.toggle("is-scrolled", window.scrollY > 20);
     };
     updateHeader();
-    window.addEventListener("scroll", updateHeader, { passive: true });
+    window.addEventListener("scroll", updateHeader, {
+        passive: true
+    });
 }
 function initializeScrollReveal() {
     const revealSelectors = [
