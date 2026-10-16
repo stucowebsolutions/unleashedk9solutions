@@ -26,7 +26,7 @@
 .services-hero__media {
     position: absolute;
     inset: 0;
-    background: url("../../assets/images/chris-jj-golden-hour.webp") center/cover no-repeat;
+    background: url("../../assets/images/chris-jj-golden-hour.webp") center/contain no-repeat;
 }
 .services-hero__media-overlay {
     position: absolute;
