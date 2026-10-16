@@ -159,63 +159,99 @@
 }
 .services-approach {
     position: relative;
+    width: 100%;
     min-height: 620px;
-    display: flex;
-    align-items: center;
     overflow: hidden;
     background: #111;
 }
+
+.services-approach__container {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    min-height: 620px;
+    padding: 0;
+}
+
 .services-approach__image {
     position: absolute;
-    inset: 0 50% 0 0;
-    background: url("../../assets/images/chris-jj-golden-hour.webp") center/cover no-repeat;
+    inset: 0 65% 0 0;
+    background-color: #111;
+    background-image: url("../../assets/images/services-approach.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
 .services-approach__image::after {
     position: absolute;
     inset: 0;
     content: "";
-    background: linear-gradient(90deg,rgba(0,0,0,.1),rgba(0,0,0,.35));
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, .05),
+        rgba(0, 0, 0, .25)
+    );
 }
-.services-approach__container {
-    width: 100%;
-}
+
 .services-approach__content {
-    max-width: 560px;
-    margin-left: auto;
-    padding: 5rem 0 5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 65%;
+    min-height: 620px;
+    margin-left: 35%;
+    padding: 5rem clamp(2rem, 6vw, 6rem);
     color: #fff;
+    text-align: center;
 }
+
 .services-approach__content h2 {
     margin: .5rem 0 1.5rem;
 }
+
 .services-approach__content h2 span {
     color: #c62828;
 }
+
 .services-approach__content > p {
     margin: 0;
-    color: rgba(255,255,255,.76);
+    color: rgba(255, 255, 255, .76);
     line-height: 1.75;
 }
+
 .services-approach__content > p + p {
     margin-top: 1rem;
 }
+
 .services-approach__features {
     display: grid;
-    grid-template-columns: repeat(2,minmax(0,1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem 1.5rem;
-    margin-top: 2rem;
+    width: 100%;
+    max-width: 560px;
+    margin: 2rem auto 0;
+    text-align: left;
 }
+
 .services-approach__feature {
     display: flex;
     align-items: center;
     gap: .7rem;
-    font-family: "Barlow Condensed",sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: .04em;
     text-transform: uppercase;
 }
+
 .services-approach__feature span:first-child {
+    flex-shrink: 0;
+    color: #c62828;
+    font-size: 1.1rem;
+    font-weight: 700;
+}.services-approach__feature span:first-child {
     color: #c62828;
     font-size: 1.1rem;
     font-weight: 700;
@@ -290,16 +326,34 @@
     }
     .services-approach {
         min-height: 0;
-        display: block;
     }
+
+    .services-approach__container {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+    }
+
     .services-approach__image {
         position: relative;
         inset: auto;
+        flex: none;
+        background-size: contain;
+        width: 100%;
         height: 360px;
     }
+
     .services-approach__content {
-        max-width: none;
-        padding: 4rem 0;
+        width: 100%;
+        min-height: 0;
+        margin: 0;
+        padding: 4rem 1.5rem;
+        text-align: center;
+    }
+
+    .services-approach__features {
+        grid-template-columns: 1fr;
+        max-width: 360px;
     }
 }
 @media (max-width: 500px) {
