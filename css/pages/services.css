@@ -120,14 +120,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 62px;
-    height: 62px;
+    width: 124px;
+    height: 124px;
     margin-bottom: 1.5rem;
     background: #111;
 }
 .service-card__icon img {
-    width: 34px;
-    height: 34px;
+    width: 102px;
+    height: 102px;
     object-fit: contain;
 }
 .service-card__content h3 {
